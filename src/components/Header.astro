@@ -1,14 +1,12 @@
 ---
 import HeaderLink from './HeaderLink.astro';
-import Icon from './Icon.astro';
 import { SITE_TITLE, NAV_LINKS } from '../consts';
 ---
 
 <header>
 	<nav class="container">
-		<a href="/" class="brand">
-			<span class="brand-mark"><Icon name="wheat" size={26} /></span>
-			<span class="brand-text">{SITE_TITLE}</span>
+		<a href="/" class="brand" aria-label={SITE_TITLE}>
+			<img src="/celiacos_guatemala_logo.svg" alt={SITE_TITLE} class="brand-logo" width="126" height="40" />
 		</a>
 
 		<input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true" />
@@ -38,23 +36,14 @@ import { SITE_TITLE, NAV_LINKS } from '../consts';
 		min-height: 68px;
 	}
 	.brand {
-		display: flex;
-		align-items: center;
-		gap: 0.6rem;
-		font-weight: 700;
-		font-size: 1.15rem;
-		color: rgb(var(--ink));
-		text-decoration: none;
-	}
-	.brand-mark {
 		display: inline-flex;
 		align-items: center;
-		justify-content: center;
-		width: 40px;
+		text-decoration: none;
+	}
+	.brand-logo {
+		display: block;
 		height: 40px;
-		border-radius: 12px;
-		background: rgb(var(--green));
-		color: #fff;
+		width: auto;
 	}
 	.links {
 		display: flex;

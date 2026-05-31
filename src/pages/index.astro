@@ -1,50 +1,373 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Page from '../layouts/Page.astro';
+import Icon from '../components/Icon.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import { getCollection } from 'astro:content';
+import { SITE_TITLE, SITE_DESCRIPTION, STATS, PROGRAMS, VALUES } from '../consts';
+
+const posts = (await getCollection('blog'))
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 3);
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
+<Page title={`${SITE_TITLE} — Vida sin gluten, con dignidad`} description={SITE_DESCRIPTION}>
+	<!-- Hero -->
+	<section class="hero">
+		<div class="container hero-grid">
+			<div class="hero-copy">
+				<span class="badge">Asociación sin fines de lucro · desde 2014</span>
+				<h1>Vida sin gluten,<br /><span class="hl">con dignidad</span></h1>
+				<p>
+					En Guatemala, una de cada cien personas vive con celiaquía y la mayoría tarda años en
+					recibir un diagnóstico. Acompañamos a esas familias con información confiable, comunidad y
+					acceso a una alimentación segura.
+				</p>
+				<div class="hero-actions">
+					<a href="/contacto#donar" class="btn btn--wheat"><Icon name="heart" size={18} /> Quiero donar</a>
+					<a href="/programas" class="btn btn--ghost">Conoce nuestros programas</a>
+				</div>
+			</div>
+			<div class="hero-card">
+				<img src="/blog-placeholder-about.jpg" alt="Familia compartiendo una comida sin gluten" />
+				<div class="hero-float">
+					<span class="hero-float-num">+3,200</span>
+					<span>familias acompañadas</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Stats -->
+	<section class="section--green stats-band">
+		<div class="container grid grid-4">
+			{
+				STATS.map((s) => (
+					<div class="stat">
+						<span class="stat-num">{s.value}</span>
+						<span class="stat-label">{s.label}</span>
+					</div>
+				))
+			}
+		</div>
+	</section>
+
+	<!-- Mission -->
+	<section class="section">
+		<div class="container mission-grid">
+			<div>
+				<span class="eyebrow">Quiénes somos</span>
+				<h2>Nadie debería enfrentar la celiaquía en soledad</h2>
+				<p>
+					Celiacos Guatemala nació en 2014, cuando un grupo de madres y padres no encontró dónde
+					informarse tras el diagnóstico de sus hijos. Hoy somos una red nacional de familias,
+					pacientes, médicos y voluntarios.
+				</p>
+				<p>
+					Creemos que un diagnóstico temprano y una alimentación segura no deberían ser un privilegio.
+					Por eso trabajamos cada día para que la vida sin gluten sea posible para todas y todos.
+				</p>
+				<a href="/quienes-somos" class="btn btn--primary">Nuestra historia <Icon name="arrow" size={18} /></a>
+			</div>
+			<div class="values grid grid-2">
+				{
+					VALUES.map((v) => (
+						<div class="value">
+							<span class="card-icon"><Icon name={v.icon} size={26} /></span>
+							<h4>{v.title}</h4>
+							<p>{v.text}</p>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<!-- Programs -->
+	<section class="section section--cream">
+		<div class="container">
+			<div class="section-head">
+				<span class="eyebrow">Nuestros programas</span>
+				<h2>Cómo generamos impacto</h2>
+				<p>Seis frentes de trabajo que acompañan a la persona celíaca en cada etapa.</p>
+			</div>
+			<div class="grid grid-3">
+				{
+					PROGRAMS.map((p) => (
+						<a href={`/programas#${p.id}`} class="card program-card">
+							<span class="card-icon"><Icon name={p.icon} size={26} /></span>
+							<h3>{p.title}</h3>
+							<p>{p.summary}</p>
+						</a>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<!-- Understanding celiac CTA -->
+	<section class="section learn-band">
+		<div class="container learn-grid">
+			<div>
+				<span class="eyebrow" style="color:#fff;">Información que salva</span>
+				<h2 style="color:#fff;">¿Sabes qué es realmente la celiaquía?</h2>
+				<p>
+					No es una moda ni una alergia. Es una enfermedad autoinmune que, sin tratamiento, daña el
+					intestino. La buena noticia: con una dieta sin gluten, la vida vuelve a la normalidad.
+				</p>
+				<a href="/que-es-la-celiaquia" class="btn btn--light">Aprende sobre la celiaquía</a>
+			</div>
+			<ul class="learn-points">
+				<li><Icon name="check" size={20} /> Afecta al 1% de la población mundial</li>
+				<li><Icon name="check" size={20} /> En Guatemala el diagnóstico tarda hasta 7 años</li>
+				<li><Icon name="check" size={20} /> El único tratamiento es la dieta sin gluten</li>
+				<li><Icon name="check" size={20} /> Una sola miga puede causar daño</li>
 			</ul>
+		</div>
+	</section>
+
+	<!-- Blog -->
+	<section class="section section--cream">
+		<div class="container">
+			<div class="section-head">
+				<span class="eyebrow">Blog y recursos</span>
+				<h2>Últimas publicaciones</h2>
+				<p>Recetas, guías y novedades para vivir mejor sin gluten.</p>
+			</div>
+			<div class="grid grid-3">
+				{
+					posts.map((post) => (
+						<a href={`/blog/${post.id}/`} class="card post-card">
+							<img src={post.data.heroImage} alt="" class="post-img" />
+							<div class="post-body">
+								<span class="post-date"><FormattedDate date={post.data.pubDate} /></span>
+								<h3>{post.data.title}</h3>
+								<p>{post.data.description}</p>
+							</div>
+						</a>
+					))
+				}
+			</div>
+			<div style="text-align:center; margin-top:2.5rem;">
+				<a href="/blog" class="btn btn--ghost">Ver todas las publicaciones</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Final CTA -->
+	<section class="section final-cta">
+		<div class="container">
+			<h2>Súmate al movimiento sin gluten</h2>
 			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
+				Dona, ofrece tu tiempo como voluntario o conviértete en comercio aliado. Cada gesto acerca un
+				diagnóstico digno y una comida segura a una familia guatemalteca.
 			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+			<div class="hero-actions" style="justify-content:center;">
+				<a href="/contacto#donar" class="btn btn--wheat">Donar ahora</a>
+				<a href="/contacto" class="btn btn--ghost">Ser voluntario</a>
+			</div>
+		</div>
+	</section>
+</Page>
+
+<style>
+	.hero {
+		background:
+			radial-gradient(900px 400px at 80% -10%, rgba(var(--wheat), 0.18), transparent) rgb(var(--cream));
+		padding: 4rem 0 4.5rem;
+	}
+	.hero-grid {
+		display: grid;
+		grid-template-columns: 1.05fr 0.95fr;
+		gap: 3rem;
+		align-items: center;
+	}
+	.hero-copy h1 {
+		font-size: 3.3rem;
+		margin: 1rem 0;
+	}
+	.hl {
+		color: rgb(var(--green));
+	}
+	.hero-copy p {
+		font-size: 1.15rem;
+		color: rgb(var(--gray-dark));
+		max-width: 46ch;
+	}
+	.hero-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.8rem;
+		margin-top: 1.8rem;
+	}
+	.hero-card {
+		position: relative;
+	}
+	.hero-card img {
+		width: 100%;
+		border-radius: 20px;
+		box-shadow: var(--box-shadow);
+		aspect-ratio: 4 / 3;
+		object-fit: cover;
+	}
+	.hero-float {
+		position: absolute;
+		bottom: -22px;
+		left: -22px;
+		background: #fff;
+		border-radius: 16px;
+		padding: 1rem 1.3rem;
+		box-shadow: var(--box-shadow);
+		display: flex;
+		flex-direction: column;
+		line-height: 1.2;
+	}
+	.hero-float-num {
+		font-size: 1.6rem;
+		font-weight: 700;
+		color: rgb(var(--green));
+	}
+	.hero-float span:last-child {
+		font-size: 0.85rem;
+		color: rgb(var(--gray));
+	}
+
+	.stats-band {
+		padding: 2.6rem 0;
+	}
+	.stat {
+		text-align: center;
+	}
+	.stat-num {
+		display: block;
+		font-size: 2.2rem;
+		font-weight: 700;
+		color: rgb(var(--green-dark));
+	}
+	.stat-label {
+		font-size: 0.95rem;
+		color: rgb(var(--gray-dark));
+	}
+
+	.mission-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3rem;
+		align-items: center;
+	}
+	.value {
+		background: #fff;
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: var(--radius);
+		padding: 1.4rem;
+	}
+	.value h4 {
+		margin-bottom: 0.4rem;
+	}
+	.value p {
+		font-size: 0.92rem;
+		color: rgb(var(--gray));
+		margin: 0;
+	}
+
+	.program-card {
+		text-decoration: none;
+		color: inherit;
+		display: block;
+	}
+	.program-card h3 {
+		color: rgb(var(--ink));
+	}
+
+	.learn-band {
+		background: linear-gradient(135deg, rgb(var(--green-dark)), rgb(var(--green)));
+	}
+	.learn-grid {
+		display: grid;
+		grid-template-columns: 1.2fr 0.8fr;
+		gap: 2.5rem;
+		align-items: center;
+	}
+	.learn-band p {
+		color: rgba(255, 255, 255, 0.9);
+		font-size: 1.1rem;
+		max-width: 50ch;
+	}
+	.learn-points {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: grid;
+		gap: 0.9rem;
+	}
+	.learn-points li {
+		display: flex;
+		align-items: center;
+		gap: 0.7rem;
+		background: rgba(255, 255, 255, 0.12);
+		color: #fff;
+		padding: 0.85rem 1.1rem;
+		border-radius: 12px;
+		font-weight: 600;
+	}
+	.learn-points :global(svg) {
+		color: rgb(var(--wheat));
+		flex-shrink: 0;
+	}
+
+	.post-card {
+		padding: 0;
+		overflow: hidden;
+		text-decoration: none;
+		color: inherit;
+		display: flex;
+		flex-direction: column;
+	}
+	.post-img {
+		width: 100%;
+		aspect-ratio: 16 / 9;
+		object-fit: cover;
+		border-radius: 0;
+	}
+	.post-body {
+		padding: 1.4rem;
+	}
+	.post-date {
+		font-size: 0.85rem;
+		color: rgb(var(--wheat));
+		font-weight: 700;
+	}
+	.post-card h3 {
+		font-size: 1.25rem;
+		margin: 0.4rem 0;
+	}
+	.post-card p {
+		font-size: 0.95rem;
+	}
+
+	.final-cta {
+		text-align: center;
+	}
+	.final-cta p {
+		max-width: 60ch;
+		margin: 0 auto 1.5rem;
+		font-size: 1.1rem;
+		color: rgb(var(--gray-dark));
+	}
+
+	@media (max-width: 860px) {
+		.hero-grid,
+		.mission-grid,
+		.learn-grid {
+			grid-template-columns: 1fr;
+		}
+		.hero-copy h1 {
+			font-size: 2.4rem;
+		}
+		.hero-card {
+			order: -1;
+		}
+		.hero-float {
+			left: 12px;
+		}
+	}
+</style>

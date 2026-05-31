@@ -13,7 +13,7 @@ const posts = (await getCollection('blog'))
 <Page title={`${SITE_TITLE} — Información con evidencia, incidencia con propósito`} description={SITE_DESCRIPTION}>
 	<!-- Hero -->
 	<section class="hero">
-		<div class="container hero-grid">
+		<div class="container hero-inner">
 			<div class="hero-copy">
 				<span class="badge">Recurso independiente · basado en evidencia</span>
 				<h1>La celiaquía en Guatemala,<br /><span class="hl">con rigor y contexto</span></h1>
@@ -27,13 +27,18 @@ const posts = (await getCollection('blog'))
 					<a href="/incidencia" class="btn btn--ghost">La brecha de política pública</a>
 				</div>
 			</div>
-			<div class="hero-card">
-				<img src="/blog-placeholder-about.jpg" alt="Tortillas de maíz, base naturalmente sin gluten de la dieta guatemalteca" />
-				<div class="hero-float">
-					<span class="hero-float-num">0.46–0.64 %</span>
-					<span>prevalencia estimada en Latinoamérica</span>
-				</div>
-			</div>
+			<figure class="hero-map">
+				<img
+					src="/mapa-redes-celiacas-latam.webp"
+					width="1600"
+					height="873"
+					alt="Mapa ilustrativo de Centroamérica y México como un rompecabezas: las piezas con asociación nacional de pacientes celíacos aparecen completas, mientras Guatemala queda como un espacio vacío, sin red de apoyo formal."
+				/>
+				<figcaption>
+					Guatemala como la pieza ausente: a diferencia de varios países de la región, no cuenta
+					con una asociación nacional de pacientes celíacos ni una red de apoyo formal.
+				</figcaption>
+			</figure>
 		</div>
 	</section>
 
@@ -197,11 +202,14 @@ const posts = (await getCollection('blog'))
 			radial-gradient(900px 400px at 80% -10%, rgba(var(--wheat), 0.18), transparent) rgb(var(--cream));
 		padding: 4rem 0 4.5rem;
 	}
-	.hero-grid {
-		display: grid;
-		grid-template-columns: 1.05fr 0.95fr;
-		gap: 3rem;
+	.hero-inner {
+		display: flex;
+		flex-direction: column;
 		align-items: center;
+		text-align: center;
+	}
+	.hero-copy {
+		max-width: 60ch;
 	}
 	.hero-copy h1 {
 		font-size: 3.2rem;
@@ -213,45 +221,35 @@ const posts = (await getCollection('blog'))
 	.hero-copy p {
 		font-size: 1.15rem;
 		color: rgb(var(--gray-dark));
-		max-width: 52ch;
+		margin-inline: auto;
 	}
 	.hero-actions {
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: center;
 		gap: 0.8rem;
 		margin-top: 1.8rem;
 	}
-	.hero-card {
-		position: relative;
-	}
-	.hero-card img {
+	.hero-map {
+		margin: 2.8rem 0 0;
 		width: 100%;
+		max-width: 940px;
+	}
+	.hero-map img {
+		width: 100%;
+		height: auto;
+		display: block;
 		border-radius: 20px;
 		box-shadow: var(--box-shadow);
-		aspect-ratio: 4 / 3;
-		object-fit: cover;
-	}
-	.hero-float {
-		position: absolute;
-		bottom: -22px;
-		left: -22px;
 		background: #fff;
-		border-radius: 16px;
-		padding: 1rem 1.3rem;
-		box-shadow: var(--box-shadow);
-		display: flex;
-		flex-direction: column;
-		line-height: 1.2;
-		max-width: 220px;
 	}
-	.hero-float-num {
-		font-size: 1.5rem;
-		font-weight: 700;
-		color: rgb(var(--green));
-	}
-	.hero-float span:last-child {
-		font-size: 0.85rem;
+	.hero-map figcaption {
+		margin-top: 0.9rem;
+		font-size: 0.9rem;
 		color: rgb(var(--gray));
+		max-width: 62ch;
+		margin-inline: auto;
+		line-height: 1.5;
 	}
 
 	.stats-band {
@@ -389,7 +387,6 @@ const posts = (await getCollection('blog'))
 	}
 
 	@media (max-width: 860px) {
-		.hero-grid,
 		.reality-grid,
 		.learn-grid {
 			grid-template-columns: 1fr;
@@ -397,11 +394,8 @@ const posts = (await getCollection('blog'))
 		.hero-copy h1 {
 			font-size: 2.4rem;
 		}
-		.hero-card {
-			order: -1;
-		}
-		.hero-float {
-			left: 12px;
+		.hero-map {
+			margin-top: 2rem;
 		}
 	}
 </style>

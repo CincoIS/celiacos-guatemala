@@ -1,6 +1,6 @@
 ---
 import Icon from './Icon.astro';
-import { SITE_TITLE, ORG, NAV_LINKS, SOCIAL_LINKS } from '../consts';
+import { SITE_TITLE, ORG, NAV_LINKS, FOOT_LINKS } from '../consts';
 const year = new Date().getFullYear();
 ---
 
@@ -11,18 +11,10 @@ const year = new Date().getFullYear();
 				<span class="brand-mark"><Icon name="wheat" size={24} /></span>
 				<span>{SITE_TITLE}</span>
 			</a>
-			<p>{ORG.tagline}. Acompañamos a las personas celíacas de Guatemala desde {ORG.founded}.</p>
-			<div class="socials">
-				<a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener" aria-label="Facebook"
-					><Icon name="facebook" size={20} /></a
-				>
-				<a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener" aria-label="Instagram"
-					><Icon name="instagram" size={20} /></a
-				>
-				<a href={SOCIAL_LINKS.youtube} target="_blank" rel="noopener" aria-label="YouTube"
-					><Icon name="youtube" size={20} /></a
-				>
-			</div>
+			<p>
+				Recurso independiente de información basada en evidencia sobre la enfermedad celíaca en
+				Guatemala, e iniciativa de incidencia en política pública.
+			</p>
 		</div>
 
 		<div class="foot-col">
@@ -33,24 +25,23 @@ const year = new Date().getFullYear();
 		</div>
 
 		<div class="foot-col">
-			<h4>Contacto</h4>
-			<ul class="contact">
-				<li><Icon name="pin" size={18} /><span>{ORG.address}</span></li>
-				<li><Icon name="mail" size={18} /><a href={`mailto:${ORG.email}`}>{ORG.email}</a></li>
-				<li><Icon name="phone" size={18} /><a href={`tel:${ORG.phone.replace(/\s/g, '')}`}>{ORG.phone}</a></li>
-				<li><Icon name="clock" size={18} /><span>{ORG.hours}</span></li>
+			<h4>El proyecto</h4>
+			<ul>
+				{FOOT_LINKS.map((link) => <li><a href={link.href}>{link.label}</a></li>)}
 			</ul>
 		</div>
 
-		<div class="foot-col foot-cta">
-			<h4>Tu apoyo transforma vidas</h4>
-			<p>Con tu donación entregamos despensas sin gluten y diagnósticos dignos.</p>
-			<a href="/contacto#donar" class="btn btn--wheat">Quiero donar</a>
+		<div class="foot-col foot-note">
+			<h4>Aviso</h4>
+			<p>
+				El contenido tiene fines informativos y no sustituye la consulta médica. No mantenemos
+				relación comercial con marcas ni establecimientos: los mencionamos solo como referencia.
+			</p>
 		</div>
 	</div>
 	<div class="foot-bottom container">
-		<span>&copy; {year} {ORG.legalName}. Todos los derechos reservados.</span>
-		<span>Hecho con cariño en Guatemala.</span>
+		<span>&copy; {year} {ORG.name}. Información de uso libre con atribución.</span>
+		<span>Hecho en Guatemala.</span>
 	</div>
 </footer>
 <style>
@@ -88,27 +79,7 @@ const year = new Date().getFullYear();
 	}
 	.foot-about p {
 		font-size: 0.95rem;
-		max-width: 30ch;
-	}
-	.socials {
-		display: flex;
-		gap: 0.6rem;
-		margin-top: 1rem;
-	}
-	.socials a {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		width: 38px;
-		height: 38px;
-		border-radius: 10px;
-		background: rgba(255, 255, 255, 0.1);
-		color: #fff;
-		transition: 0.2s ease;
-	}
-	.socials a:hover {
-		background: rgb(var(--wheat));
-		color: #3a2c06;
+		max-width: 34ch;
 	}
 	.foot-col h4 {
 		color: #fff;
@@ -131,20 +102,10 @@ const year = new Date().getFullYear();
 		color: #fff;
 		text-decoration: underline;
 	}
-	.contact li {
-		display: flex;
-		align-items: flex-start;
-		gap: 0.55rem;
-		font-size: 0.95rem;
-	}
-	.contact :global(svg) {
-		flex-shrink: 0;
-		margin-top: 3px;
-		color: rgb(var(--wheat));
-	}
-	.foot-cta p {
-		font-size: 0.95rem;
-		margin-bottom: 1rem;
+	.foot-note p {
+		font-size: 0.9rem;
+		margin: 0;
+		max-width: 36ch;
 	}
 	.foot-bottom {
 		display: flex;

@@ -1,0 +1,353 @@
+---
+import Page from '../layouts/Page.astro';
+import Icon from '../components/Icon.astro';
+
+const gaps = [
+	{
+		icon: 'users',
+		title: 'Sin asociación de pacientes',
+		text: 'Guatemala está ausente de los directorios internacionales de asociaciones celíacas. El apoyo se canaliza por clínicas privadas y comunidades informales en redes, sin una voz organizada que represente a los pacientes.',
+	},
+	{
+		icon: 'scale',
+		title: 'Sin ley ni etiquetado propio',
+		text: 'No existe una «ley de celiaquía» con derechos específicos. El país aplica el reglamento centroamericano de etiquetado, pero carece de una norma nacional «sin gluten» y de un sello oficial verificable.',
+	},
+	{
+		icon: 'search',
+		title: 'Sin datos epidemiológicos',
+		text: 'No hay un estudio poblacional nacional ni un registro. Las cifras disponibles son regionales o provienen de un solo estudio hospitalario, lo que invisibiliza el problema ante las autoridades.',
+	},
+	{
+		icon: 'heart',
+		title: 'Sin cobertura pública',
+		text: 'El IGSS brinda atención médica general pero no cubre alimentos sin gluten, y el MSPAS no tiene un programa dedicado. No existe ningún subsidio estatal para una dieta que cuesta significativamente más.',
+	},
+];
+
+const agenda = [
+	{
+		n: '01',
+		title: 'Una asociación nacional de pacientes',
+		text: 'Una organización formal mejoraría el registro de datos, la conciencia médica, la seguridad alimentaria y la capacidad de incidir en política pública.',
+	},
+	{
+		n: '02',
+		title: 'Una norma nacional de etiquetado «sin gluten»',
+		text: 'Un estándar y un sello verificables darían certeza al consumidor celíaco más allá de la advertencia genérica de trazas que hoy exige el reglamento regional.',
+	},
+	{
+		n: '03',
+		title: 'Un registro epidemiológico',
+		text: 'Datos guatemaltecos —no solo regionales— permitirían dimensionar la prevalencia real y orientar recursos de diagnóstico y atención.',
+	},
+	{
+		n: '04',
+		title: 'Cobertura y acceso',
+		text: 'Evaluar mecanismos de cobertura o apoyo para la dieta sin gluten, siguiendo modelos regionales que ya la contemplan.',
+	},
+];
+
+const region = [
+	{ country: 'Argentina', law: 'Ley 26.588 (2009)', detail: 'Menú sin TACC obligatorio y cobertura de alimentos sin gluten.', has: true },
+	{ country: 'Panamá', law: 'FUCEPA', detail: 'Fundación de pacientes celíacos consolidada.', has: true },
+	{ country: 'Costa Rica', law: 'Asociación nacional', detail: 'Asociación Pro Personas Celiacas activa.', has: true },
+	{ country: 'México', law: 'ACELMEX', detail: 'Asociación que incluso certifica productos en la región.', has: true },
+	{ country: 'Guatemala', law: '—', detail: 'Sin asociación, sin ley, sin registro y sin cobertura.', has: false },
+];
+---
+
+<Page
+	title="Incidencia en política pública — Celiacos Guatemala"
+	description="Guatemala carece de asociación de pacientes celíacos, ley de celiaquía, etiquetado nacional «sin gluten» y datos epidemiológicos. Analizamos los vacíos y proponemos una agenda, con modelos regionales como referencia."
+>
+	<section class="page-hero">
+		<div class="container">
+			<span class="eyebrow">Política pública</span>
+			<h1>La brecha que queremos cerrar</h1>
+			<p>
+				En Guatemala, vivir con celiaquía depende casi por completo del esfuerzo individual y del
+				sector privado. Documentamos los vacíos institucionales y proponemos una agenda basada en
+				evidencia y en lo que ya funciona en la región.
+			</p>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container">
+			<div class="section-head">
+				<span class="eyebrow">El diagnóstico institucional</span>
+				<h2>Cuatro vacíos que se refuerzan entre sí</h2>
+				<p>La ausencia de datos dificulta la incidencia; la falta de incidencia perpetúa la ausencia de normas. Romper el círculo exige actuar en varios frentes.</p>
+			</div>
+			<div class="grid grid-2">
+				{
+					gaps.map((g) => (
+						<div class="card gap-card">
+							<span class="card-icon"><Icon name={g.icon} size={26} /></span>
+							<h3>{g.title}</h3>
+							<p>{g.text}</p>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--cream">
+		<div class="container narrow">
+			<div class="section-head">
+				<span class="eyebrow">Marco vigente</span>
+				<h2>Qué dice (y qué no) la normativa actual</h2>
+			</div>
+			<div class="law-block">
+				<h3><Icon name="doc" size={20} /> RTCA 67.01.07:10 — Etiquetado de alimentos</h3>
+				<p>
+					Aprobado por Resolución 280-2012 (COMIECO-LXII), obliga a declarar los ingredientes que
+					causan hipersensibilidad —incluido el gluten— y a advertir el riesgo de contaminación
+					cruzada con frases como «puede contener trazas de…». Es una protección de etiquetado, no un
+					derecho específico para personas celíacas.
+				</p>
+			</div>
+			<div class="law-block">
+				<h3><Icon name="doc" size={20} /> RTCA 67.01.31:06 — Registro sanitario</h3>
+				<p>
+					Rige el procedimiento de registro de alimentos procesados. El control en Guatemala
+					corresponde al Departamento de Regulación y Control de Productos Farmacéuticos y Afines del
+					MSPAS.
+				</p>
+			</div>
+			<div class="law-block highlight">
+				<h3><Icon name="alert" size={20} /> Lo que falta</h3>
+				<p>
+					No existe una ley de celiaquía, ni una norma nacional «sin gluten», ni obligación de ofrecer
+					opciones seguras en restaurantes, escuelas u hospitales, ni cobertura pública de la dieta.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container">
+			<div class="section-head">
+				<span class="eyebrow">Comparación regional</span>
+				<h2>Lo que otros países ya tienen</h2>
+				<p>Existen modelos cercanos y replicables. Guatemala es la excepción, no la regla.</p>
+			</div>
+			<div class="table-wrap">
+				<table class="region-table">
+					<thead>
+						<tr>
+							<th>País</th>
+							<th>Marco / asociación</th>
+							<th>Situación</th>
+						</tr>
+					</thead>
+					<tbody>
+						{
+							region.map((r) => (
+								<tr class={r.has ? '' : 'row-gap'}>
+									<td data-label="País"><strong>{r.country}</strong></td>
+									<td data-label="Marco / asociación">{r.law}</td>
+									<td data-label="Situación">
+										<span class="badge-cell">
+											<Icon name={r.has ? 'check' : 'alert'} size={16} /> {r.detail}
+										</span>
+									</td>
+								</tr>
+							))
+						}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--wheat">
+		<div class="container">
+			<div class="section-head">
+				<span class="eyebrow">Nuestra agenda</span>
+				<h2>Cuatro cambios que harían la diferencia</h2>
+			</div>
+			<div class="grid grid-2">
+				{
+					agenda.map((a) => (
+						<div class="agenda-card">
+							<span class="agenda-num">{a.n}</span>
+							<div>
+								<h3>{a.title}</h3>
+								<p>{a.text}</p>
+							</div>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<section class="section sources">
+		<div class="container">
+			<p class="sources-title"><Icon name="doc" size={18} /> Fuentes de esta página</p>
+			<ul>
+				<li>RTCA 67.01.07:10 y RTCA 67.01.31:06 (Reglamentos Técnicos Centroamericanos).</li>
+				<li>Ley de Celiaquía N.º 26.588 de Argentina (2009) y reformas posteriores.</li>
+				<li>Directorios internacionales de asociaciones de pacientes celíacos.</li>
+			</ul>
+			<a href="/referencias" class="src-link">Ver todas las referencias y fuentes <Icon name="arrow" size={16} /></a>
+		</div>
+	</section>
+</Page>
+
+<style>
+	.page-hero {
+		background: rgb(var(--green-light));
+		padding: 3.5rem 0;
+		text-align: center;
+	}
+	.page-hero p {
+		max-width: 64ch;
+		margin: 0.5rem auto 0;
+		font-size: 1.12rem;
+		color: rgb(var(--gray-dark));
+	}
+	.gap-card p {
+		color: rgb(var(--gray-dark));
+		margin: 0;
+	}
+	.narrow {
+		max-width: 820px;
+	}
+	.law-block {
+		background: #fff;
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: var(--radius);
+		padding: 1.5rem 1.8rem;
+		margin-bottom: 1rem;
+	}
+	.law-block h3 {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-size: 1.15rem;
+		margin-bottom: 0.5rem;
+	}
+	.law-block h3 :global(svg) {
+		color: rgb(var(--green));
+		flex-shrink: 0;
+	}
+	.law-block p {
+		margin: 0;
+		color: rgb(var(--gray-dark));
+	}
+	.law-block.highlight {
+		border-left: 4px solid rgb(var(--brand));
+		background: rgb(var(--brand-tint));
+	}
+	.law-block.highlight h3 :global(svg) {
+		color: rgb(var(--brand-dark));
+	}
+	.table-wrap {
+		overflow-x: auto;
+		border-radius: var(--radius);
+		border: 1px solid rgb(var(--gray-light));
+	}
+	.region-table {
+		width: 100%;
+		border-collapse: collapse;
+		background: #fff;
+		min-width: 560px;
+	}
+	.region-table th,
+	.region-table td {
+		text-align: left;
+		padding: 1rem 1.2rem;
+		border-bottom: 1px solid rgb(var(--gray-light));
+		vertical-align: top;
+	}
+	.region-table th {
+		background: rgb(var(--cream));
+		font-size: 0.9rem;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+		color: rgb(var(--gray-dark));
+	}
+	.region-table tbody tr:last-child td {
+		border-bottom: none;
+	}
+	.row-gap {
+		background: rgb(var(--brand-tint));
+	}
+	.badge-cell {
+		display: inline-flex;
+		align-items: flex-start;
+		gap: 0.45rem;
+		color: rgb(var(--gray-dark));
+	}
+	.badge-cell :global(svg) {
+		flex-shrink: 0;
+		margin-top: 3px;
+		color: rgb(var(--green));
+	}
+	.row-gap .badge-cell :global(svg) {
+		color: rgb(var(--brand-dark));
+	}
+	.agenda-card {
+		display: flex;
+		gap: 1rem;
+		align-items: flex-start;
+		background: #fff;
+		border: 1px solid rgba(var(--wheat), 0.4);
+		border-radius: var(--radius);
+		padding: 1.6rem;
+	}
+	.agenda-num {
+		font-size: 1.4rem;
+		font-weight: 700;
+		color: rgb(var(--brand));
+		flex-shrink: 0;
+		line-height: 1;
+	}
+	.agenda-card h3 {
+		font-size: 1.15rem;
+		margin-bottom: 0.4rem;
+	}
+	.agenda-card p {
+		margin: 0;
+		color: rgb(var(--gray-dark));
+		font-size: 0.95rem;
+	}
+	.sources {
+		padding-top: 1.5rem;
+	}
+	.sources-title {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-weight: 700;
+		color: rgb(var(--ink));
+		margin-bottom: 0.6rem;
+	}
+	.sources-title :global(svg) {
+		color: rgb(var(--green));
+	}
+	.sources ul {
+		margin: 0 0 1rem;
+		padding-left: 1.2rem;
+		color: rgb(var(--gray-dark));
+		font-size: 0.95rem;
+	}
+	.sources li {
+		margin-bottom: 0.3rem;
+	}
+	.src-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		font-weight: 600;
+	}
+	@media (max-width: 700px) {
+		.region-table td {
+			font-size: 0.95rem;
+		}
+	}
+</style>

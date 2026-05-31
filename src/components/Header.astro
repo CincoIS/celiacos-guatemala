@@ -18,7 +18,6 @@ import { SITE_TITLE, NAV_LINKS } from '../consts';
 
 		<div class="links">
 			{NAV_LINKS.map((link) => <HeaderLink href={link.href}>{link.label}</HeaderLink>)}
-			<a href="/contacto#donar" class="btn btn--wheat btn-donate">Donar</a>
 		</div>
 	</nav>
 </header>
@@ -61,10 +60,6 @@ import { SITE_TITLE, NAV_LINKS } from '../consts';
 		display: flex;
 		align-items: center;
 		gap: 0.3rem;
-	}
-	.btn-donate {
-		margin-left: 0.6rem;
-		padding: 0.5rem 1.1rem;
 	}
 	.nav-toggle,
 	.nav-burger {
@@ -110,10 +105,6 @@ import { SITE_TITLE, NAV_LINKS } from '../consts';
 			opacity: 1;
 			pointer-events: auto;
 			padding-top: 1rem;
-		}
-		.btn-donate {
-			margin: 0.75rem 0 0;
-			justify-content: center;
 		}
 	}
 </style>

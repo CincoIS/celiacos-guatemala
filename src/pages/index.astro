@@ -3,41 +3,41 @@ import Page from '../layouts/Page.astro';
 import Icon from '../components/Icon.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import { getCollection } from 'astro:content';
-import { SITE_TITLE, SITE_DESCRIPTION, STATS, PROGRAMS, VALUES } from '../consts';
+import { SITE_TITLE, SITE_DESCRIPTION, STATS, FOCUS, VALUES } from '../consts';
 
 const posts = (await getCollection('blog'))
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 	.slice(0, 3);
 ---
 
-<Page title={`${SITE_TITLE} — Vida sin gluten, con dignidad`} description={SITE_DESCRIPTION}>
+<Page title={`${SITE_TITLE} — Información con evidencia, incidencia con propósito`} description={SITE_DESCRIPTION}>
 	<!-- Hero -->
 	<section class="hero">
 		<div class="container hero-grid">
 			<div class="hero-copy">
-				<span class="badge">Asociación sin fines de lucro · desde 2014</span>
-				<h1>Vida sin gluten,<br /><span class="hl">con dignidad</span></h1>
+				<span class="badge">Recurso independiente · basado en evidencia</span>
+				<h1>La celiaquía en Guatemala,<br /><span class="hl">con rigor y contexto</span></h1>
 				<p>
-					En Guatemala, una de cada cien personas vive con celiaquía y la mayoría tarda años en
-					recibir un diagnóstico. Acompañamos a esas familias con información confiable, comunidad y
-					acceso a una alimentación segura.
+					Guatemala no tiene una asociación nacional de pacientes celíacos, ni una ley de celiaquía,
+					ni datos epidemiológicos propios. Reunimos información verificable sobre la enfermedad y
+					documentamos esos vacíos para impulsar una mejor política pública.
 				</p>
 				<div class="hero-actions">
-					<a href="/contacto#donar" class="btn btn--wheat"><Icon name="heart" size={18} /> Quiero donar</a>
-					<a href="/programas" class="btn btn--ghost">Conoce nuestros programas</a>
+					<a href="/que-es-la-celiaquia" class="btn btn--primary">Entender la celiaquía <Icon name="arrow" size={18} /></a>
+					<a href="/incidencia" class="btn btn--ghost">La brecha de política pública</a>
 				</div>
 			</div>
 			<div class="hero-card">
-				<img src="/blog-placeholder-about.jpg" alt="Familia compartiendo una comida sin gluten" />
+				<img src="/blog-placeholder-about.jpg" alt="Tortillas de maíz, base naturalmente sin gluten de la dieta guatemalteca" />
 				<div class="hero-float">
-					<span class="hero-float-num">+3,200</span>
-					<span>familias acompañadas</span>
+					<span class="hero-float-num">0.46–0.64 %</span>
+					<span>prevalencia estimada en Latinoamérica</span>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- Stats -->
+	<!-- Key facts -->
 	<section class="section--green stats-band">
 		<div class="container grid grid-4">
 			{
@@ -51,27 +51,92 @@ const posts = (await getCollection('blog'))
 		</div>
 	</section>
 
-	<!-- Mission -->
+	<!-- The reality in Guatemala -->
 	<section class="section">
-		<div class="container mission-grid">
+		<div class="container reality-grid">
 			<div>
-				<span class="eyebrow">Quiénes somos</span>
-				<h2>Nadie debería enfrentar la celiaquía en soledad</h2>
+				<span class="eyebrow">El panorama nacional</span>
+				<h2>Tres pilares que a Guatemala le faltan</h2>
 				<p>
-					Celiacos Guatemala nació en 2014, cuando un grupo de madres y padres no encontró dónde
-					informarse tras el diagnóstico de sus hijos. Hoy somos una red nacional de familias,
-					pacientes, médicos y voluntarios.
+					La atención existe —laboratorios privados, gastroenterólogos y la Unidad de
+					Gastroenterología del Hospital Roosevelt— pero está concentrada en el sector privado de la
+					capital. Lo que no existe es la infraestructura pública e institucional que sí tienen otros
+					países de la región.
 				</p>
-				<p>
-					Creemos que un diagnóstico temprano y una alimentación segura no deberían ser un privilegio.
-					Por eso trabajamos cada día para que la vida sin gluten sea posible para todas y todos.
-				</p>
-				<a href="/quienes-somos" class="btn btn--primary">Nuestra historia <Icon name="arrow" size={18} /></a>
+				<a href="/incidencia" class="btn btn--primary">Ver el análisis completo <Icon name="arrow" size={18} /></a>
 			</div>
-			<div class="values grid grid-2">
+			<ul class="gap-list">
+				<li>
+					<Icon name="users" size={22} />
+					<div><strong>Sin asociación de pacientes.</strong> Guatemala no figura en los directorios internacionales de asociaciones celíacas.</div>
+				</li>
+				<li>
+					<Icon name="scale" size={22} />
+					<div><strong>Sin ley ni etiquetado propio.</strong> Aplica el reglamento centroamericano; no hay una norma nacional «sin gluten».</div>
+				</li>
+				<li>
+					<Icon name="search" size={22} />
+					<div><strong>Sin datos epidemiológicos.</strong> No existe un estudio poblacional ni un registro nacional.</div>
+				</li>
+			</ul>
+		</div>
+	</section>
+
+	<!-- Cultural advantage -->
+	<section class="section learn-band">
+		<div class="container learn-grid">
+			<div>
+				<span class="eyebrow" style="color:#fff;">La ventaja del maíz</span>
+				<h2 style="color:#fff;">La base de la dieta ya es segura</h2>
+				<p>
+					La dieta guatemalteca se sostiene en la tortilla de maíz, naturalmente libre de gluten. El
+					principal reto para una persona celíaca aquí no es la falta de alimentos base seguros, sino
+					la contaminación cruzada, el costo de los productos importados y la baja conciencia pública.
+				</p>
+				<a href="/vivir-sin-gluten" class="btn btn--light">Cómo vivir sin gluten en Guatemala</a>
+			</div>
+			<ul class="learn-points">
+				<li><Icon name="check" size={20} /> Afecta cerca del 1 % de la población mundial</li>
+				<li><Icon name="check" size={20} /> El único tratamiento es la dieta sin gluten de por vida</li>
+				<li><Icon name="check" size={20} /> Una sola miga puede causar daño intestinal</li>
+				<li><Icon name="check" size={20} /> No retires el gluten antes de hacerte las pruebas</li>
+			</ul>
+		</div>
+	</section>
+
+	<!-- Focus areas -->
+	<section class="section section--cream">
+		<div class="container">
+			<div class="section-head">
+				<span class="eyebrow">En qué trabajamos</span>
+				<h2>Cuatro frentes, un mismo propósito</h2>
+				<p>Información clara y verificable, y una agenda para cerrar la brecha de política pública.</p>
+			</div>
+			<div class="grid grid-4">
+				{
+					FOCUS.map((f) => (
+						<a href={f.href} class="card focus-card">
+							<span class="card-icon"><Icon name={f.icon} size={26} /></span>
+							<h3>{f.title}</h3>
+							<p>{f.summary}</p>
+						</a>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<!-- Principles -->
+	<section class="section">
+		<div class="container">
+			<div class="section-head">
+				<span class="eyebrow">Cómo trabajamos</span>
+				<h2>Principios del proyecto</h2>
+			</div>
+			<div class="grid grid-4">
 				{
 					VALUES.map((v) => (
-						<div class="value">
+						<div class="card">
 							<span class="card-icon"><Icon name={v.icon} size={26} /></span>
 							<h4>{v.title}</h4>
 							<p>{v.text}</p>
@@ -82,56 +147,13 @@ const posts = (await getCollection('blog'))
 		</div>
 	</section>
 
-	<!-- Programs -->
+	<!-- Articles -->
 	<section class="section section--cream">
 		<div class="container">
 			<div class="section-head">
-				<span class="eyebrow">Nuestros programas</span>
-				<h2>Cómo generamos impacto</h2>
-				<p>Seis frentes de trabajo que acompañan a la persona celíaca en cada etapa.</p>
-			</div>
-			<div class="grid grid-3">
-				{
-					PROGRAMS.map((p) => (
-						<a href={`/programas#${p.id}`} class="card program-card">
-							<span class="card-icon"><Icon name={p.icon} size={26} /></span>
-							<h3>{p.title}</h3>
-							<p>{p.summary}</p>
-						</a>
-					))
-				}
-			</div>
-		</div>
-	</section>
-
-	<!-- Understanding celiac CTA -->
-	<section class="section learn-band">
-		<div class="container learn-grid">
-			<div>
-				<span class="eyebrow" style="color:#fff;">Información que salva</span>
-				<h2 style="color:#fff;">¿Sabes qué es realmente la celiaquía?</h2>
-				<p>
-					No es una moda ni una alergia. Es una enfermedad autoinmune que, sin tratamiento, daña el
-					intestino. La buena noticia: con una dieta sin gluten, la vida vuelve a la normalidad.
-				</p>
-				<a href="/que-es-la-celiaquia" class="btn btn--light">Aprende sobre la celiaquía</a>
-			</div>
-			<ul class="learn-points">
-				<li><Icon name="check" size={20} /> Afecta al 1% de la población mundial</li>
-				<li><Icon name="check" size={20} /> En Guatemala el diagnóstico tarda hasta 7 años</li>
-				<li><Icon name="check" size={20} /> El único tratamiento es la dieta sin gluten</li>
-				<li><Icon name="check" size={20} /> Una sola miga puede causar daño</li>
-			</ul>
-		</div>
-	</section>
-
-	<!-- Blog -->
-	<section class="section section--cream">
-		<div class="container">
-			<div class="section-head">
-				<span class="eyebrow">Blog y recursos</span>
-				<h2>Últimas publicaciones</h2>
-				<p>Recetas, guías y novedades para vivir mejor sin gluten.</p>
+				<span class="eyebrow">Recursos</span>
+				<h2>Guías y artículos</h2>
+				<p>Material práctico y verificado para entender y manejar la celiaquía en Guatemala.</p>
 			</div>
 			<div class="grid grid-3">
 				{
@@ -148,22 +170,22 @@ const posts = (await getCollection('blog'))
 				}
 			</div>
 			<div style="text-align:center; margin-top:2.5rem;">
-				<a href="/blog" class="btn btn--ghost">Ver todas las publicaciones</a>
+				<a href="/blog" class="btn btn--ghost">Ver todos los recursos</a>
 			</div>
 		</div>
 	</section>
 
-	<!-- Final CTA -->
+	<!-- Closing -->
 	<section class="section final-cta">
 		<div class="container">
-			<h2>Súmate al movimiento sin gluten</h2>
+			<h2>Información que sostiene mejores decisiones</h2>
 			<p>
-				Dona, ofrece tu tiempo como voluntario o conviértete en comercio aliado. Cada gesto acerca un
-				diagnóstico digno y una comida segura a una familia guatemalteca.
+				Este es un recurso independiente y sin fines comerciales. Todas las afirmaciones se apoyan en
+				literatura médica, normativa vigente o fuentes verificables, citadas y enlazadas.
 			</p>
 			<div class="hero-actions" style="justify-content:center;">
-				<a href="/contacto#donar" class="btn btn--wheat">Donar ahora</a>
-				<a href="/contacto" class="btn btn--ghost">Ser voluntario</a>
+				<a href="/incidencia" class="btn btn--primary">Conoce la agenda de incidencia</a>
+				<a href="/referencias" class="btn btn--ghost">Referencias y fuentes</a>
 			</div>
 		</div>
 	</section>
@@ -182,7 +204,7 @@ const posts = (await getCollection('blog'))
 		align-items: center;
 	}
 	.hero-copy h1 {
-		font-size: 3.3rem;
+		font-size: 3.2rem;
 		margin: 1rem 0;
 	}
 	.hl {
@@ -191,7 +213,7 @@ const posts = (await getCollection('blog'))
 	.hero-copy p {
 		font-size: 1.15rem;
 		color: rgb(var(--gray-dark));
-		max-width: 46ch;
+		max-width: 52ch;
 	}
 	.hero-actions {
 		display: flex;
@@ -220,9 +242,10 @@ const posts = (await getCollection('blog'))
 		display: flex;
 		flex-direction: column;
 		line-height: 1.2;
+		max-width: 220px;
 	}
 	.hero-float-num {
-		font-size: 1.6rem;
+		font-size: 1.5rem;
 		font-weight: 700;
 		color: rgb(var(--green));
 	}
@@ -239,42 +262,43 @@ const posts = (await getCollection('blog'))
 	}
 	.stat-num {
 		display: block;
-		font-size: 2.2rem;
+		font-size: 1.9rem;
 		font-weight: 700;
 		color: rgb(var(--green-dark));
 	}
 	.stat-label {
-		font-size: 0.95rem;
+		font-size: 0.92rem;
 		color: rgb(var(--gray-dark));
 	}
 
-	.mission-grid {
+	.reality-grid {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 3rem;
 		align-items: center;
 	}
-	.value {
+	.gap-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: grid;
+		gap: 1rem;
+	}
+	.gap-list li {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.9rem;
 		background: #fff;
 		border: 1px solid rgb(var(--gray-light));
-		border-radius: var(--radius);
-		padding: 1.4rem;
+		border-radius: 14px;
+		padding: 1.1rem 1.3rem;
 	}
-	.value h4 {
-		margin-bottom: 0.4rem;
+	.gap-list :global(svg) {
+		color: rgb(var(--green));
+		flex-shrink: 0;
+		margin-top: 2px;
 	}
-	.value p {
-		font-size: 0.92rem;
-		color: rgb(var(--gray));
-		margin: 0;
-	}
-
-	.program-card {
-		text-decoration: none;
-		color: inherit;
-		display: block;
-	}
-	.program-card h3 {
+	.gap-list strong {
 		color: rgb(var(--ink));
 	}
 
@@ -290,7 +314,7 @@ const posts = (await getCollection('blog'))
 	.learn-band p {
 		color: rgba(255, 255, 255, 0.9);
 		font-size: 1.1rem;
-		max-width: 50ch;
+		max-width: 52ch;
 	}
 	.learn-points {
 		list-style: none;
@@ -312,6 +336,16 @@ const posts = (await getCollection('blog'))
 	.learn-points :global(svg) {
 		color: rgb(var(--wheat));
 		flex-shrink: 0;
+	}
+
+	.focus-card {
+		text-decoration: none;
+		color: inherit;
+		display: block;
+	}
+	.focus-card h3 {
+		color: rgb(var(--ink));
+		font-size: 1.15rem;
 	}
 
 	.post-card {
@@ -348,7 +382,7 @@ const posts = (await getCollection('blog'))
 		text-align: center;
 	}
 	.final-cta p {
-		max-width: 60ch;
+		max-width: 64ch;
 		margin: 0 auto 1.5rem;
 		font-size: 1.1rem;
 		color: rgb(var(--gray-dark));
@@ -356,7 +390,7 @@ const posts = (await getCollection('blog'))
 
 	@media (max-width: 860px) {
 		.hero-grid,
-		.mission-grid,
+		.reality-grid,
 		.learn-grid {
 			grid-template-columns: 1fr;
 		}

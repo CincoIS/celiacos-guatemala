@@ -1,169 +1,115 @@
 // Global site data for Celiacos Guatemala.
+// Independent, evidence-based information resource on celiac disease in
+// Guatemala, and a public-policy advocacy initiative. No commercial interest.
 // Import this data from anywhere using the `import` keyword.
 
 export const SITE_TITLE = "Celiacos Guatemala";
 export const SITE_DESCRIPTION =
-	"Asociación sin fines de lucro que acompaña a las personas celíacas de Guatemala con información, comunidad y diagnóstico digno. Vida sin gluten, con dignidad.";
+	"Recurso independiente de información basada en evidencia sobre la enfermedad celíaca en Guatemala, e iniciativa de incidencia por la política pública que el país aún no tiene.";
 
 export const ORG = {
 	name: "Celiacos Guatemala",
-	legalName: "Asociación Celiacos de Guatemala",
-	tagline: "Vida sin gluten, con dignidad",
-	founded: 2014,
-	email: "info@celiacosguatemala.org",
-	phone: "+502 2245 6789",
-	whatsapp: "+502 5012 3456",
-	address: "12 Calle 1-25, Zona 10, Ciudad de Guatemala",
-	hours: "Lunes a viernes, 9:00 – 17:00",
+	tagline: "Información con evidencia, incidencia con propósito",
 };
 
 export const NAV_LINKS = [
 	{ href: "/", label: "Inicio" },
-	{ href: "/quienes-somos", label: "Quiénes Somos" },
-	{ href: "/que-es-la-celiaquia", label: "La Celiaquía" },
-	{ href: "/programas", label: "Programas" },
-	{ href: "/blog", label: "Blog" },
-	{ href: "/contacto", label: "Contacto" },
+	{ href: "/que-es-la-celiaquia", label: "La celiaquía" },
+	{ href: "/vivir-sin-gluten", label: "Vivir sin gluten" },
+	{ href: "/incidencia", label: "Incidencia" },
+	{ href: "/blog", label: "Recursos" },
 ];
 
-export const SOCIAL_LINKS = {
-	facebook: "https://facebook.com/celiacosguatemala",
-	instagram: "https://instagram.com/celiacosguatemala",
-	youtube: "https://youtube.com/@celiacosguatemala",
-};
+// Secondary links shown in the footer.
+export const FOOT_LINKS = [
+	{ href: "/referencias", label: "Referencias y fuentes" },
+	{ href: "/acerca", label: "Acerca del proyecto" },
+];
 
+// Honest, sourced figures — not impact claims.
 export const STATS = [
-	{ value: "1 de 100", label: "personas vive con celiaquía en Guatemala" },
-	{ value: "+3,200", label: "familias acompañadas desde 2014" },
-	{ value: "85", label: "comercios aliados sin gluten certificados" },
-	{ value: "24", label: "talleres y capacitaciones cada año" },
+	{
+		value: "0.46–0.64 %",
+		label: "prevalencia estimada de celiaquía en Latinoamérica (meta-análisis, PLoS ONE 2015)",
+	},
+	{
+		value: "Sin registro",
+		label: "Guatemala no cuenta con un estudio poblacional ni un registro nacional propio",
+	},
+	{
+		value: "0 leyes",
+		label: "no existe una ley de celiaquía ni una norma nacional de etiquetado «sin gluten»",
+	},
+	{
+		value: "Maíz",
+		label: "la tortilla de maíz, base de la dieta guatemalteca, es naturalmente sin gluten",
+	},
 ];
 
+// Principles that guide the project.
 export const VALUES = [
 	{
-		icon: "heart",
-		title: "Dignidad",
-		text: "Toda persona celíaca merece un diagnóstico temprano y alimentos seguros, sin importar dónde viva o cuánto gane.",
-	},
-	{
-		icon: "users",
-		title: "Comunidad",
-		text: "Nadie debería enfrentar la celiaquía en soledad. Construimos una red de apoyo entre familias, pacientes y profesionales.",
-	},
-	{
 		icon: "book",
-		title: "Información confiable",
-		text: "Traducimos la ciencia médica a un lenguaje claro y verificado, libre de mitos y de falsas curas.",
+		title: "Evidencia",
+		text: "Cada afirmación se apoya en literatura médica, normativa vigente o fuentes verificables, citadas y enlazadas.",
+	},
+	{
+		icon: "scale",
+		title: "Independencia",
+		text: "No vendemos productos ni promovemos marcas. La información se ofrece sin conflicto de interés comercial.",
+	},
+	{
+		icon: "flag",
+		title: "Incidencia",
+		text: "Documentamos los vacíos de política pública para impulsar registro epidemiológico, etiquetado y cobertura.",
 	},
 	{
 		icon: "leaf",
-		title: "Inclusión",
-		text: "Trabajamos para que escuelas, restaurantes y hospitales ofrezcan opciones seguras sin gluten para todas y todos.",
+		title: "Contexto local",
+		text: "Partimos de la realidad guatemalteca: la tortilla de maíz, el costo de lo importado y la contaminación cruzada.",
 	},
 ];
 
-export const PROGRAMS = [
+// Lines of work (replaces the old NGO "programs").
+export const FOCUS = [
+	{
+		id: "informacion",
+		icon: "book",
+		title: "Información basada en evidencia",
+		summary:
+			"Qué es la enfermedad celíaca, cómo se diagnostica y cómo se vive sin gluten, explicado con fuentes verificables.",
+		href: "/que-es-la-celiaquia",
+	},
 	{
 		id: "diagnostico",
 		icon: "stethoscope",
-		title: "Diagnóstico Digno",
+		title: "Ruta de diagnóstico",
 		summary:
-			"Jornadas de tamizaje y orientación médica para acortar el promedio de 7 años que tarda un diagnóstico en Guatemala.",
-		details: [
-			"Jornadas de pruebas de anticuerpos a precio subsidiado.",
-			"Acompañamiento para interpretar resultados con gastroenterólogos aliados.",
-			"Rutas de referencia hacia hospitales públicos y privados.",
-		],
+			"La secuencia serología → biopsia y dónde se realiza en Guatemala, como orientación que no sustituye al criterio médico.",
+		href: "/que-es-la-celiaquia#diagnostico",
 	},
 	{
-		id: "comunidad",
-		icon: "users",
-		title: "Red de Apoyo",
+		id: "vida",
+		icon: "leaf",
+		title: "Vida sin gluten en Guatemala",
 		summary:
-			"Grupos de apoyo presenciales y en línea donde las familias comparten experiencias, recetas y soluciones cotidianas.",
-		details: [
-			"Encuentros mensuales en la capital y por videollamada.",
-			"Grupo de WhatsApp moderado por voluntarios capacitados.",
-			"Acompañamiento especial para padres de niñas y niños recién diagnosticados.",
-		],
-	},
-	{
-		id: "educacion",
-		icon: "book",
-		title: "Educación y Talleres",
-		summary:
-			"Capacitamos a familias, cocineros y personal de salud sobre la dieta sin gluten y la contaminación cruzada.",
-		details: [
-			"Talleres de cocina segura sin gluten.",
-			"Capacitación a restaurantes y comedores escolares.",
-			"Charlas para personal médico y de enfermería.",
-		],
-	},
-	{
-		id: "sello",
-		icon: "badge",
-		title: "Sello Sin Gluten",
-		summary:
-			"Programa de verificación que identifica comercios y productos seguros para la comunidad celíaca.",
-		details: [
-			"Auditoría de cocinas y procesos de producción.",
-			"Directorio público de comercios aliados certificados.",
-			"Reevaluación anual para mantener el sello.",
-		],
+			"Aprovechar la tortilla de maíz, evitar la contaminación cruzada y saber dónde comprar y comer con seguridad.",
+		href: "/vivir-sin-gluten",
 	},
 	{
 		id: "incidencia",
 		icon: "flag",
-		title: "Incidencia y Políticas",
+		title: "Incidencia en política pública",
 		summary:
-			"Impulsamos el etiquetado claro de alimentos y el acceso a productos sin gluten asequibles.",
-		details: [
-			"Propuestas de ley para etiquetado de alérgenos.",
-			"Mesas de diálogo con el Ministerio de Salud.",
-			"Campañas de concientización en medios y redes.",
-		],
-	},
-	{
-		id: "becas",
-		icon: "gift",
-		title: "Despensa Solidaria",
-		summary:
-			"Entregamos productos sin gluten a familias de bajos recursos, para quienes la dieta puede costar el triple.",
-		details: [
-			"Despensas mensuales de harinas y pastas sin gluten.",
-			"Alianzas con productores locales de maíz, arroz y yuca.",
-			"Priorización de hogares con niñas y niños celíacos.",
-		],
-	},
-];
-
-export const TEAM = [
-	{
-		name: "Dra. Ana Lucía Morales",
-		role: "Directora Ejecutiva",
-		bio: "Gastroenteróloga pediatra. Fundó la asociación tras el diagnóstico de su hija en 2014.",
-	},
-	{
-		name: "Carlos Méndez Pérez",
-		role: "Coordinador de Programas",
-		bio: "Nutricionista especializado en enfermedad celíaca y educación alimentaria comunitaria.",
-	},
-	{
-		name: "María José Cabrera",
-		role: "Coordinadora de Voluntariado",
-		bio: "Trabajadora social. Lidera la red de grupos de apoyo en todo el país.",
-	},
-	{
-		name: "Jorge Estuardo Ríos",
-		role: "Comunicación e Incidencia",
-		bio: "Comunicador social enfocado en políticas públicas de salud y etiquetado.",
+			"Documentar la ausencia de ley, registro y etiquetado, y proponer cambios usando modelos regionales como referencia.",
+		href: "/incidencia",
 	},
 ];
 
 export const FAQS = [
 	{
 		q: "¿La celiaquía es lo mismo que una alergia al trigo?",
-		a: "No. La celiaquía es una enfermedad autoinmune: el gluten daña el intestino delgado. Una alergia al trigo es una reacción distinta del sistema inmune. Ambas requieren evitar ciertos alimentos, pero su origen y manejo son diferentes.",
+		a: "No. La celiaquía es una enfermedad autoinmune: el gluten daña el intestino delgado. Una alergia al trigo es una reacción inmunológica distinta. Ambas obligan a evitar ciertos alimentos, pero su origen, su mecanismo y su manejo son diferentes.",
 	},
 	{
 		q: "¿La dieta sin gluten cura la celiaquía?",
@@ -171,14 +117,64 @@ export const FAQS = [
 	},
 	{
 		q: "¿Cómo sé si debo hacerme la prueba?",
-		a: "Si presentas diarrea o estreñimiento crónico, anemia inexplicable, fatiga, dolor abdominal o si un familiar cercano es celíaco, consulta a tu médico. Importante: no dejes de comer gluten antes de hacerte las pruebas, ya que puede alterar los resultados.",
+		a: "Si presentas diarrea o estreñimiento crónico, anemia inexplicable, fatiga, dolor abdominal o tienes un familiar de primer grado celíaco, consulta a un médico. Muy importante: no dejes de comer gluten antes de las pruebas, porque puede producir resultados falsamente negativos.",
 	},
 	{
 		q: "¿Qué es la contaminación cruzada?",
-		a: "Ocurre cuando un alimento sin gluten entra en contacto con otro que sí lo contiene (por ejemplo, usar el mismo tostador o la misma sartén). Incluso una miga puede causar daño a una persona celíaca.",
+		a: "Ocurre cuando un alimento sin gluten entra en contacto con otro que sí lo contiene: el mismo tostador, la misma sartén o un molino que procesa trigo y maíz. Incluso una miga puede causar daño a una persona celíaca, por lo que es el principal riesgo en una dieta que, en Guatemala, ya parte de un alimento seguro como la tortilla de maíz.",
 	},
 	{
-		q: "¿Necesito ser celíaco para ser voluntario?",
-		a: "Para nada. Recibimos a cualquier persona que quiera aportar su tiempo y talento: profesionales de salud, cocineros, comunicadores, contadores y más. La empatía es el único requisito.",
+		q: "¿Existe una asociación de pacientes celíacos en Guatemala?",
+		a: "No. A diferencia de Costa Rica, Panamá (FUCEPA), México, Paraguay, Uruguay o Argentina, Guatemala no figura en los directorios internacionales de asociaciones celíacas. Esa ausencia institucional es, en sí misma, una de las brechas más relevantes: dificulta la generación de datos, la incidencia política y la seguridad alimentaria.",
+	},
+];
+
+// Consolidated sources for the references page. URLs only when verifiable.
+export const REFERENCES = [
+	{
+		category: "Epidemiología",
+		title:
+			"Prevalence of Celiac Disease in Latin America: A Systematic Review and Meta-Regression",
+		source: "PLoS ONE (2015) · PMID 25942408",
+		note: "Estima la prevalencia de enfermedad celíaca en Latinoamérica entre 0.46 % y 0.64 %; 5.5 % en familiares de primer grado.",
+		url: "https://pubmed.ncbi.nlm.nih.gov/25942408/",
+	},
+	{
+		category: "Diagnóstico",
+		title: "ESPGHAN Guidelines for Diagnosing Coeliac Disease 2020",
+		source: "Journal of Pediatric Gastroenterology and Nutrition (2020)",
+		note: "Ruta diagnóstica pediátrica; permite, en casos seleccionados con anticuerpos muy elevados, el diagnóstico sin biopsia.",
+		url: "https://www.espghan.org/knowledge-center/publications/Gastroenterology",
+	},
+	{
+		category: "Normativa",
+		title:
+			"RTCA 67.01.07:10 — Etiquetado general de alimentos previamente envasados",
+		source: "Reglamento Técnico Centroamericano · Resolución 280-2012 (COMIECO-LXII)",
+		note: "Obliga a declarar alérgenos —incluido el gluten— y a advertir el riesgo de contaminación cruzada con trazas.",
+		url: "",
+	},
+	{
+		category: "Normativa",
+		title:
+			"RTCA 67.01.31:06 — Registro sanitario de alimentos y bebidas procesados",
+		source: "Reglamento Técnico Centroamericano",
+		note: "Rige el procedimiento de registro sanitario; el control en Guatemala corresponde al MSPAS.",
+		url: "",
+	},
+	{
+		category: "Modelos regionales",
+		title:
+			"Ley de Celiaquía N.º 26.588 (Argentina, 2009; mod. 27.196/2015; Decreto 218/2023)",
+		source: "Honorable Congreso de la Nación Argentina",
+		note: "Modelo regional: obliga a ofrecer menú sin TACC y a cubrir alimentos sin gluten. Guatemala no tiene equivalente.",
+		url: "https://www.argentina.gob.ar/normativa/nacional/ley-26588-161919",
+	},
+	{
+		category: "Directorios",
+		title: "Find Me Gluten Free — Guatemala",
+		source: "findmeglutenfree.com/gt",
+		note: "Directorio colaborativo de establecimientos «gluten-free friendly» y dedicados en el país.",
+		url: "https://www.findmeglutenfree.com/gt",
 	},
 ];

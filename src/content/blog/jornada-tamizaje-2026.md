@@ -1,30 +1,31 @@
 ---
-title: "Jornada de tamizaje 2026: diagnósticos dignos para más familias"
-description: "Anunciamos nuestra próxima jornada de pruebas a precio subsidiado. Conoce las fechas, sedes y cómo participar."
+title: "Tamizaje y diagnóstico: cómo y cuándo hacerse la prueba"
+description: "Qué es el tamizaje serológico de la celiaquía, qué mide, por qué no debes dejar de comer gluten antes del examen y cómo es la ruta diagnóstica en Guatemala."
 pubDate: "Mar 05 2026"
 heroImage: "/blog-placeholder-3.jpg"
 ---
 
-En Guatemala, una persona puede tardar **hasta siete años** en recibir un diagnóstico de celiaquía. Durante ese tiempo, los síntomas se confunden con otras condiciones y la salud se deteriora. Por eso lanzamos nuestra jornada anual de tamizaje.
+En Guatemala, una persona puede tardar **años** en recibir un diagnóstico de celiaquía. Durante ese tiempo, los síntomas se confunden con otras condiciones y la salud se deteriora. Entender el tamizaje ayuda a acortar ese camino.
 
 ## ¿Qué es el tamizaje?
 
-Es una prueba de sangre que mide los anticuerpos asociados a la celiaquía. No es un diagnóstico definitivo, pero permite identificar a quienes deben continuar con estudios más profundos junto a un especialista.
+Es una prueba de sangre que mide los anticuerpos asociados a la celiaquía, principalmente la **anti-transglutaminasa tisular IgA (tTG-IgA)**, acompañada de la IgA total para descartar un déficit que produzca falsos negativos. No es un diagnóstico definitivo, pero identifica a quienes deben continuar con estudios más profundos junto a un especialista.
 
-## Fechas y sedes
+## ¿Quién debería considerarlo?
 
-- **Ciudad de Guatemala** — 7 de junio, sede central, Zona 10.
-- **Quetzaltenango** — 14 de junio, en alianza con el hospital regional.
-- **Cobán** — 21 de junio, jornada itinerante.
-
-Las pruebas se ofrecen a un **precio subsidiado** gracias a las donaciones de nuestra comunidad, y de forma gratuita para familias en situación de vulnerabilidad.
+- Personas con diarrea o estreñimiento crónico, distensión o dolor abdominal.
+- Anemia por deficiencia de hierro o fatiga sin causa aparente.
+- Familiares de primer grado de una persona celíaca.
+- Cuadros extraintestinales como osteoporosis temprana o ciertos problemas de fertilidad.
 
 ## Importante antes de la prueba
 
-> No elimines el gluten de tu dieta antes del examen. Hacerlo puede alterar los resultados y dar un falso negativo.
+> No elimines el gluten de tu dieta antes del examen. Hacerlo puede alterar los resultados y dar un falso negativo. La dieta sin gluten se inicia **después** de confirmar el diagnóstico.
 
-## Cómo participar
+## La ruta completa
 
-Escríbenos por nuestras redes o al correo de la asociación para reservar tu cupo. El espacio es limitado y se asigna por orden de inscripción.
+Si la serología resulta positiva, el siguiente paso suele ser una **endoscopía con biopsia duodenal** que evalúa la atrofia de las vellosidades intestinales (clasificación de Marsh). En pediatría, las guías ESPGHAN 2020 permiten, en casos seleccionados, confirmar el diagnóstico sin biopsia. La decisión corresponde siempre al médico.
 
-Cada prueba realizada es un paso más hacia nuestra meta: que ningún guatemalteco viva años sin saber por qué se siente mal.
+En Guatemala, varios laboratorios privados ofrecen el panel de serología celíaca, y la confirmación por endoscopía se realiza con gastroenterólogos privados y en la Unidad de Gastroenterología del Hospital Roosevelt.
+
+Conocer la ruta es el primer paso para que ningún guatemalteco viva años sin saber por qué se siente mal.

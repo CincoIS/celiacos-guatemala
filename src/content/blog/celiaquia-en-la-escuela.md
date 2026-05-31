@@ -25,4 +25,4 @@ Estos momentos pueden hacer sentir excluido a un niño celíaco. Una buena estra
 
 Que tu hijo entienda su condición con naturalidad es tan importante como la dieta. Refuerza que es fuerte, no diferente, y que cuidarse es un acto de valentía.
 
-En Celiacos Guatemala capacitamos a comedores escolares y damos charlas a docentes. Si tu escuela necesita orientación, escríbenos.
+Compartir información clara con la escuela —qué es la celiaquía, qué es la contaminación cruzada y cómo se maneja una refacción segura— suele ser el paso que más tranquilidad da a las familias y al personal docente.

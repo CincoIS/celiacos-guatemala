@@ -94,7 +94,7 @@ const steps = [
 		</div>
 	</section>
 
-	<section class="section">
+	<section id="diagnostico" class="section">
 		<div class="container">
 			<div class="section-head">
 				<span class="eyebrow">Diagnóstico</span>
@@ -111,6 +111,34 @@ const steps = [
 						</div>
 					))
 				}
+			</div>
+
+			<div class="gt-box">
+				<h3>La ruta diagnóstica en Guatemala</h3>
+				<p>
+					El proceso sigue el estándar internacional, pero se concentra en gastroenterólogos
+					privados y, en el sector público, en la Unidad de Gastroenterología del Hospital Roosevelt
+					—sede del único posgrado nacional de gastroenterología—. La secuencia habitual es:
+				</p>
+				<ul class="gt-list">
+					<li>
+						<Icon name="check" size={18} />
+						<span><strong>Serología.</strong> Anticuerpos anti-transglutaminasa tisular IgA (tTG-IgA) como marcador inicial, junto con IgA total para descartar un déficit que produzca falsos negativos; según el caso se añaden anti-endomisio (EMA) o péptidos de gliadina desamidada (DGP). El umbral de positividad típico en la región es mayor a 10 U/mL.</span>
+					</li>
+					<li>
+						<Icon name="check" size={18} />
+						<span><strong>Biopsia duodenal.</strong> Endoscopía digestiva alta que toma muestras del bulbo y la segunda porción del duodeno para evaluar la atrofia de las vellosidades (clasificación de Marsh).</span>
+					</li>
+					<li>
+						<Icon name="check" size={18} />
+						<span><strong>Pruebas genéticas HLA-DQ2/DQ8.</strong> Menos disponibles localmente; suelen referirse fuera del país y son costosas. Ayudan sobre todo a descartar la enfermedad.</span>
+					</li>
+				</ul>
+				<p class="gt-note">
+					En pediatría, las guías <a href="https://www.espghan.org/knowledge-center/publications/Gastroenterology" target="_blank" rel="noopener">ESPGHAN 2020</a>
+					permiten —en casos seleccionados, con anticuerpos muy elevados y confirmación— el diagnóstico
+					sin biopsia. Decidirlo corresponde siempre al especialista.
+				</p>
 			</div>
 		</div>
 	</section>
@@ -151,11 +179,25 @@ const steps = [
 		</div>
 	</section>
 
+	<section class="section sources">
+		<div class="container">
+			<p class="sources-title"><Icon name="doc" size={18} /> Fuentes de esta página</p>
+			<ul>
+				<li>Meta-análisis de prevalencia en Latinoamérica, <em>PLoS ONE</em> (2015).</li>
+				<li>Guías ESPGHAN para el diagnóstico de la enfermedad celíaca (2020).</li>
+			</ul>
+			<a href="/referencias" class="src-link">Ver todas las referencias y fuentes <Icon name="arrow" size={16} /></a>
+		</div>
+	</section>
+
 	<section class="section join-band">
 		<div class="container">
-			<h2>¿Crees que podrías ser celíaco?</h2>
-			<p>Te orientamos sobre dónde y cómo hacerte las pruebas. No estás solo en este camino.</p>
-			<a href="/contacto" class="btn btn--wheat">Pide orientación</a>
+			<h2>El siguiente paso</h2>
+			<p>Si ya tienes un diagnóstico, conoce cómo vivir sin gluten en Guatemala y por qué falta una política pública que respalde a la comunidad celíaca.</p>
+			<div class="cta-row">
+				<a href="/vivir-sin-gluten" class="btn btn--wheat">Vivir sin gluten</a>
+				<a href="/incidencia" class="btn btn--light">La brecha de política pública</a>
+			</div>
 		</div>
 	</section>
 </Page>
@@ -285,6 +327,77 @@ const steps = [
 		margin: 0.8rem 0 0;
 		color: rgb(var(--gray-dark));
 	}
+	#diagnostico {
+		scroll-margin-top: 90px;
+	}
+	.gt-box {
+		margin-top: 2.5rem;
+		background: #fff;
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: var(--radius);
+		padding: 2rem;
+		max-width: 880px;
+		margin-inline: auto;
+	}
+	.gt-box > p {
+		color: rgb(var(--gray-dark));
+	}
+	.gt-list {
+		list-style: none;
+		margin: 1.2rem 0 0;
+		padding: 0;
+		display: grid;
+		gap: 0.9rem;
+	}
+	.gt-list li {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.7rem;
+	}
+	.gt-list :global(svg) {
+		color: rgb(var(--green));
+		flex-shrink: 0;
+		margin-top: 5px;
+	}
+	.gt-list strong {
+		color: rgb(var(--ink));
+	}
+	.gt-note {
+		margin: 1.4rem 0 0;
+		padding-top: 1.2rem;
+		border-top: 1px solid rgb(var(--gray-light));
+		font-size: 0.95rem;
+		color: rgb(var(--gray-dark));
+	}
+	.sources {
+		padding-top: 0;
+	}
+	.sources-title {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-weight: 700;
+		color: rgb(var(--ink));
+		margin-bottom: 0.6rem;
+	}
+	.sources-title :global(svg) {
+		color: rgb(var(--green));
+	}
+	.sources ul {
+		margin: 0 0 1rem;
+		padding-left: 1.2rem;
+		color: rgb(var(--gray-dark));
+		font-size: 0.95rem;
+	}
+	.sources li {
+		margin-bottom: 0.3rem;
+	}
+	.src-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		font-weight: 600;
+	}
 	.join-band {
 		text-align: center;
 		background: linear-gradient(135deg, rgb(var(--ink)), rgb(var(--ink-2)));
@@ -296,6 +409,14 @@ const steps = [
 	.join-band p {
 		color: rgba(255, 255, 255, 0.9);
 		margin-bottom: 1.5rem;
+		max-width: 58ch;
+		margin-inline: auto;
+	}
+	.cta-row {
+		display: flex;
+		gap: 0.8rem;
+		justify-content: center;
+		flex-wrap: wrap;
 	}
 	@media (max-width: 860px) {
 		.def-grid {

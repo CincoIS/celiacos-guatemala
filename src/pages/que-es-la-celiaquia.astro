@@ -1,0 +1,308 @@
+---
+import Page from '../layouts/Page.astro';
+import Icon from '../components/Icon.astro';
+import { FAQS } from '../consts';
+
+const symptoms = [
+	'Diarrea o estreñimiento crónico',
+	'Distensión y dolor abdominal',
+	'Fatiga y debilidad persistente',
+	'Anemia por deficiencia de hierro',
+	'Pérdida de peso inexplicable',
+	'Retraso en el crecimiento (en niños)',
+	'Dolor de cabeza o niebla mental',
+	'Erupciones en la piel (dermatitis herpetiforme)',
+];
+
+const myths = [
+	{
+		myth: 'La dieta sin gluten es solo para bajar de peso.',
+		truth: 'Para una persona celíaca es un tratamiento médico de por vida, no una dieta de moda.',
+	},
+	{
+		myth: 'Un poquito de gluten no hace daño.',
+		truth: 'Incluso trazas mínimas (una miga) pueden dañar el intestino de una persona celíaca.',
+	},
+	{
+		myth: 'La celiaquía es una alergia.',
+		truth: 'Es una enfermedad autoinmune: el cuerpo ataca su propio intestino al detectar gluten.',
+	},
+	{
+		myth: 'Solo afecta a los niños.',
+		truth: 'Puede diagnosticarse a cualquier edad; muchos adultos viven años sin saberlo.',
+	},
+];
+
+const steps = [
+	{ n: '1', title: 'Sigue comiendo gluten', text: 'No elimines el gluten antes de las pruebas o los resultados pueden salir falsamente negativos.' },
+	{ n: '2', title: 'Prueba de anticuerpos', text: 'Un análisis de sangre (anti-transglutaminasa) es el primer paso para detectar la celiaquía.' },
+	{ n: '3', title: 'Biopsia intestinal', text: 'En muchos casos se confirma con una endoscopía que examina el intestino delgado.' },
+	{ n: '4', title: 'Dieta sin gluten de por vida', text: 'Con diagnóstico confirmado, el intestino sana al retirar por completo el gluten.' },
+];
+---
+
+<Page
+	title="¿Qué es la celiaquía? — Celiacos Guatemala"
+	description="Guía clara y verificada sobre la enfermedad celíaca: qué es, síntomas, cómo se diagnostica, mitos frecuentes y preguntas comunes."
+>
+	<section class="page-hero">
+		<div class="container">
+			<span class="eyebrow">La celiaquía</span>
+			<h1>Entender la celiaquía es el primer paso</h1>
+			<p>
+				La enfermedad celíaca es una condición autoinmune en la que el gluten —una proteína del
+				trigo, la cebada y el centeno— daña el intestino delgado. No tiene cura, pero con una dieta
+				adecuada la vida vuelve a la normalidad.
+			</p>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container def-grid">
+			<div class="def-box">
+				<span class="card-icon"><Icon name="stethoscope" size={26} /></span>
+				<h3>Es autoinmune</h3>
+				<p>El sistema inmune reacciona al gluten y, en lugar de protegerte, ataca las vellosidades del intestino.</p>
+			</div>
+			<div class="def-box">
+				<span class="card-icon"><Icon name="leaf" size={26} /></span>
+				<h3>No es una alergia</h3>
+				<p>A diferencia de una alergia alimentaria, el daño es progresivo y puede ocurrir sin síntomas visibles.</p>
+			</div>
+			<div class="def-box">
+				<span class="card-icon"><Icon name="heart" size={26} /></span>
+				<h3>Es tratable</h3>
+				<p>El único tratamiento eficaz es una dieta estricta sin gluten, sostenida toda la vida.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--cream">
+		<div class="container">
+			<div class="section-head">
+				<span class="eyebrow">Señales de alerta</span>
+				<h2>Síntomas frecuentes</h2>
+				<p>Los síntomas varían mucho de una persona a otra. Si te identificas con varios, consulta a tu médico.</p>
+			</div>
+			<ul class="symptoms">
+				{
+					symptoms.map((s) => (
+						<li><Icon name="check" size={18} /> {s}</li>
+					))
+				}
+			</ul>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container">
+			<div class="section-head">
+				<span class="eyebrow">Diagnóstico</span>
+				<h2>¿Cómo se diagnostica?</h2>
+				<p>Nunca te autodiagnostiques. El proceso debe acompañarlo un profesional de salud.</p>
+			</div>
+			<div class="grid grid-4">
+				{
+					steps.map((s) => (
+						<div class="card step-card">
+							<span class="step-num">{s.n}</span>
+							<h4>{s.title}</h4>
+							<p>{s.text}</p>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--wheat">
+		<div class="container">
+			<div class="section-head">
+				<span class="eyebrow">Sin mitos</span>
+				<h2>Mitos y realidades</h2>
+			</div>
+			<div class="grid grid-2">
+				{
+					myths.map((m) => (
+						<div class="myth-card">
+							<p class="myth">✗ Mito: {m.myth}</p>
+							<p class="truth"><Icon name="check" size={18} /> Realidad: {m.truth}</p>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container faq-wrap">
+			<div class="section-head">
+				<span class="eyebrow">Dudas comunes</span>
+				<h2>Preguntas frecuentes</h2>
+			</div>
+			{
+				FAQS.map((f) => (
+					<details class="faq">
+						<summary>{f.q}</summary>
+						<p>{f.a}</p>
+					</details>
+				))
+			}
+		</div>
+	</section>
+
+	<section class="section join-band">
+		<div class="container">
+			<h2>¿Crees que podrías ser celíaco?</h2>
+			<p>Te orientamos sobre dónde y cómo hacerte las pruebas. No estás solo en este camino.</p>
+			<a href="/contacto" class="btn btn--wheat">Pide orientación</a>
+		</div>
+	</section>
+</Page>
+
+<style>
+	.page-hero {
+		background: rgb(var(--green-light));
+		padding: 3.5rem 0;
+		text-align: center;
+	}
+	.page-hero p {
+		max-width: 62ch;
+		margin: 0.5rem auto 0;
+		font-size: 1.12rem;
+		color: rgb(var(--gray-dark));
+	}
+	.def-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.5rem;
+	}
+	.def-box {
+		text-align: center;
+		padding: 1rem;
+	}
+	.def-box .card-icon {
+		margin-inline: auto;
+	}
+	.def-box p {
+		color: rgb(var(--gray));
+	}
+	.symptoms {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.9rem;
+		max-width: 820px;
+		margin-inline: auto;
+	}
+	.symptoms li {
+		display: flex;
+		align-items: center;
+		gap: 0.7rem;
+		background: #fff;
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: 12px;
+		padding: 0.85rem 1.1rem;
+		font-weight: 600;
+	}
+	.symptoms :global(svg) {
+		color: rgb(var(--green));
+		flex-shrink: 0;
+	}
+	.step-card {
+		text-align: center;
+	}
+	.step-num {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 44px;
+		height: 44px;
+		border-radius: 50%;
+		background: rgb(var(--green));
+		color: #fff;
+		font-weight: 700;
+		font-size: 1.2rem;
+		margin-bottom: 0.8rem;
+	}
+	.step-card p {
+		font-size: 0.92rem;
+	}
+	.myth-card {
+		background: #fff;
+		border-radius: var(--radius);
+		padding: 1.5rem;
+		border: 1px solid rgba(var(--wheat), 0.4);
+	}
+	.myth {
+		font-weight: 700;
+		color: #9b2c2c;
+		margin-bottom: 0.6rem;
+	}
+	.truth {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.5rem;
+		color: rgb(var(--green-dark));
+		font-weight: 600;
+		margin: 0;
+	}
+	.truth :global(svg) {
+		flex-shrink: 0;
+		margin-top: 4px;
+	}
+	.faq-wrap {
+		max-width: 800px;
+	}
+	.faq {
+		background: #fff;
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: 12px;
+		padding: 1rem 1.3rem;
+		margin-bottom: 0.8rem;
+	}
+	.faq summary {
+		cursor: pointer;
+		font-weight: 700;
+		color: rgb(var(--ink));
+		list-style: none;
+		display: flex;
+		justify-content: space-between;
+		gap: 1rem;
+	}
+	.faq summary::after {
+		content: '+';
+		color: rgb(var(--green));
+		font-size: 1.4rem;
+		line-height: 1;
+	}
+	.faq[open] summary::after {
+		content: '–';
+	}
+	.faq p {
+		margin: 0.8rem 0 0;
+		color: rgb(var(--gray-dark));
+	}
+	.join-band {
+		text-align: center;
+		background: linear-gradient(135deg, rgb(var(--green-dark)), rgb(var(--green)));
+		color: #fff;
+	}
+	.join-band h2 {
+		color: #fff;
+	}
+	.join-band p {
+		color: rgba(255, 255, 255, 0.9);
+		margin-bottom: 1.5rem;
+	}
+	@media (max-width: 860px) {
+		.def-grid {
+			grid-template-columns: 1fr;
+		}
+		.symptoms {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

@@ -1,0 +1,222 @@
+---
+import Page from '../layouts/Page.astro';
+import Icon from '../components/Icon.astro';
+import { VALUES, TEAM, ORG } from '../consts';
+
+const timeline = [
+	{ year: '2014', text: 'Un grupo de familias funda la asociación tras no encontrar información confiable sobre la celiaquía en Guatemala.' },
+	{ year: '2016', text: 'Lanzamos los primeros grupos de apoyo presenciales y el grupo en línea para padres.' },
+	{ year: '2019', text: 'Nace el Sello Sin Gluten y certificamos a los primeros 20 comercios aliados.' },
+	{ year: '2021', text: 'Iniciamos la Despensa Solidaria para familias de bajos recursos durante la pandemia.' },
+	{ year: '2024', text: 'Llegamos a más de 3,200 familias acompañadas y abrimos mesas de diálogo sobre etiquetado.' },
+];
+---
+
+<Page
+	title="Quiénes Somos — Celiacos Guatemala"
+	description="Conoce la historia, la misión y el equipo de Celiacos Guatemala, la asociación que acompaña a las personas celíacas del país desde 2014."
+>
+	<section class="page-hero">
+		<div class="container">
+			<span class="eyebrow">Quiénes somos</span>
+			<h1>Una comunidad que no deja a nadie atrás</h1>
+			<p>
+				Somos familias, pacientes, médicos y voluntarios unidos por una convicción: en Guatemala,
+				vivir sin gluten debe ser posible, seguro y digno para todas y todos.
+			</p>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container mv-grid">
+			<div class="mv-card">
+				<span class="card-icon"><Icon name="flag" size={26} /></span>
+				<h3>Misión</h3>
+				<p>
+					Mejorar la calidad de vida de las personas celíacas en Guatemala mediante información
+					confiable, acompañamiento comunitario y acceso a una alimentación sin gluten segura.
+				</p>
+			</div>
+			<div class="mv-card">
+				<span class="card-icon"><Icon name="leaf" size={26} /></span>
+				<h3>Visión</h3>
+				<p>
+					Una Guatemala donde cada persona celíaca reciba un diagnóstico temprano y pueda alimentarse
+					con seguridad en su casa, su escuela, su trabajo y su comunidad.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--cream">
+		<div class="container">
+			<div class="section-head">
+				<span class="eyebrow">Lo que nos mueve</span>
+				<h2>Nuestros valores</h2>
+			</div>
+			<div class="grid grid-4">
+				{
+					VALUES.map((v) => (
+						<div class="card">
+							<span class="card-icon"><Icon name={v.icon} size={26} /></span>
+							<h4>{v.title}</h4>
+							<p>{v.text}</p>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container">
+			<div class="section-head">
+				<span class="eyebrow">Nuestra historia</span>
+				<h2>De un grupo de madres a un movimiento nacional</h2>
+			</div>
+			<ol class="timeline">
+				{
+					timeline.map((t) => (
+						<li>
+							<span class="t-year">{t.year}</span>
+							<p>{t.text}</p>
+						</li>
+					))
+				}
+			</ol>
+		</div>
+	</section>
+
+	<section class="section section--cream">
+		<div class="container">
+			<div class="section-head">
+				<span class="eyebrow">Nuestro equipo</span>
+				<h2>Personas detrás de la causa</h2>
+				<p>Un equipo multidisciplinario al servicio de la comunidad celíaca.</p>
+			</div>
+			<div class="grid grid-4">
+				{
+					TEAM.map((m) => (
+						<div class="card team-card">
+							<span class="avatar">{m.name.split(' ').map((n) => n[0]).slice(0, 2).join('')}</span>
+							<h4>{m.name}</h4>
+							<span class="role">{m.role}</span>
+							<p>{m.bio}</p>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<section class="section join-band">
+		<div class="container">
+			<h2>¿Quieres ser parte?</h2>
+			<p>Escríbenos a {ORG.email} o súmate como voluntario. Tu tiempo cambia historias.</p>
+			<a href="/contacto" class="btn btn--wheat">Contáctanos</a>
+		</div>
+	</section>
+</Page>
+
+<style>
+	.page-hero {
+		background: rgb(var(--green-light));
+		padding: 3.5rem 0;
+		text-align: center;
+	}
+	.page-hero p {
+		max-width: 58ch;
+		margin: 0.5rem auto 0;
+		font-size: 1.15rem;
+		color: rgb(var(--gray-dark));
+	}
+	.mv-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1.5rem;
+	}
+	.mv-card {
+		background: #fff;
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: var(--radius);
+		padding: 2rem;
+	}
+	.mv-card p {
+		color: rgb(var(--gray-dark));
+		margin: 0;
+	}
+	.timeline {
+		list-style: none;
+		margin: 0 auto;
+		padding: 0;
+		max-width: 760px;
+		border-left: 3px solid rgb(var(--green-light));
+	}
+	.timeline li {
+		position: relative;
+		padding: 0 0 1.8rem 2rem;
+	}
+	.timeline li::before {
+		content: '';
+		position: absolute;
+		left: -10px;
+		top: 4px;
+		width: 16px;
+		height: 16px;
+		border-radius: 50%;
+		background: rgb(var(--green));
+		border: 3px solid #fff;
+	}
+	.t-year {
+		font-weight: 700;
+		color: rgb(var(--green-dark));
+		font-size: 1.2rem;
+	}
+	.timeline p {
+		margin: 0.2rem 0 0;
+		color: rgb(var(--gray-dark));
+	}
+	.team-card {
+		text-align: center;
+	}
+	.avatar {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 64px;
+		height: 64px;
+		border-radius: 50%;
+		background: rgb(var(--green));
+		color: #fff;
+		font-weight: 700;
+		font-size: 1.3rem;
+		margin-bottom: 0.8rem;
+	}
+	.team-card .role {
+		display: block;
+		color: rgb(var(--wheat));
+		font-weight: 700;
+		font-size: 0.9rem;
+		margin-bottom: 0.5rem;
+	}
+	.team-card p {
+		font-size: 0.9rem;
+	}
+	.join-band {
+		text-align: center;
+		background: linear-gradient(135deg, rgb(var(--green-dark)), rgb(var(--green)));
+		color: #fff;
+	}
+	.join-band h2 {
+		color: #fff;
+	}
+	.join-band p {
+		color: rgba(255, 255, 255, 0.9);
+		margin-bottom: 1.5rem;
+	}
+	@media (max-width: 860px) {
+		.mv-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

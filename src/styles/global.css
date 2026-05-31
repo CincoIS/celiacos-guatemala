@@ -7,7 +7,8 @@
 :root {
 	/* CINCOIS brand palette: Tangelo orange + Black Beauty */
 	--brand: 255, 128, 41; /* PANTONE 15-1335 Tangelo #FF8029 */
-	--brand-dark: 224, 96, 18; /* darker tangelo for hover/links #E06012 */
+	--brand-dark: 224, 96, 18; /* darker tangelo for filled hover states #E06012 */
+	--brand-text: 168, 72, 12; /* deep tangelo for text on light bg, ≥4.5:1 #A8480C */
 	--brand-tint: 255, 238, 224; /* pale orange wash for soft bands */
 	--ink: 38, 37, 41; /* PANTONE 19-3911 Black Beauty #262529 */
 	--ink-2: 58, 56, 63; /* lifted black for gradients */
@@ -22,7 +23,7 @@
 	--cream: var(--surface);
 
 	--accent: rgb(var(--brand));
-	--accent-dark: rgb(var(--brand-dark));
+	--accent-dark: rgb(var(--brand-text));
 
 	--black: var(--ink);
 	--gray: 110, 108, 114;
@@ -185,7 +186,7 @@ hr {
 	letter-spacing: 0.12em;
 	font-size: 0.78rem;
 	font-weight: 700;
-	color: var(--accent);
+	color: var(--accent-dark);
 	margin-bottom: 0.6rem;
 }
 
@@ -235,7 +236,7 @@ hr {
 }
 .btn--ghost:hover {
 	border-color: rgb(var(--brand));
-	color: rgb(var(--brand-dark));
+	color: rgb(var(--brand-text));
 }
 .btn--light {
 	background: #fff;
@@ -243,7 +244,7 @@ hr {
 }
 .btn--light:hover {
 	background: rgb(var(--surface));
-	color: rgb(var(--brand-dark));
+	color: rgb(var(--brand-text));
 }
 
 /* ---------- Cards ---------- */
@@ -306,7 +307,7 @@ hr {
 	padding: 0.3rem 0.8rem;
 	border-radius: 999px;
 	background: rgb(var(--brand-tint));
-	color: rgb(var(--brand-dark));
+	color: rgb(var(--brand-text));
 	font-size: 0.85rem;
 	font-weight: 700;
 }

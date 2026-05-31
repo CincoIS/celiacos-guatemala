@@ -2,7 +2,7 @@
 title: "Contaminación cruzada: el enemigo invisible en la cocina"
 description: "Cómo evitar que una sola miga arruine un platillo sin gluten. Consejos prácticos para una cocina segura en casa y al comer fuera."
 pubDate: "Apr 28 2026"
-heroImage: "/blog-placeholder-2.jpg"
+heroImage: "/contaminacion-cruzada.webp"
 ---
 
 Para una persona celíaca, un platillo preparado con ingredientes sin gluten puede dejar de ser seguro por un descuido: la **contaminación cruzada**. Ocurre cuando un alimento sin gluten entra en contacto con otro que sí lo contiene.

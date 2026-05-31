@@ -75,6 +75,21 @@ const steps = [
 				<p>El único tratamiento eficaz es una dieta estricta sin gluten, sostenida toda la vida.</p>
 			</div>
 		</div>
+		<div class="container">
+			<figure class="illus">
+				<img
+					src="/vellosidades.webp"
+					width="1600"
+					height="873"
+					loading="lazy"
+					alt="Comparación ilustrada entre vellosidades intestinales sanas y un intestino con atrofia vellositaria por celiaquía."
+				/>
+				<figcaption>
+					En la celiaquía, el gluten daña las vellosidades del intestino delgado —encargadas de
+					absorber los nutrientes—, que se aplanan progresivamente (atrofia vellositaria).
+				</figcaption>
+			</figure>
+		</div>
 	</section>
 
 	<section class="section section--cream">
@@ -112,6 +127,20 @@ const steps = [
 					))
 				}
 			</div>
+
+			<figure class="illus">
+				<img
+					src="/biopsia-duodenal.webp"
+					width="1600"
+					height="873"
+					loading="lazy"
+					alt="Ilustración de una endoscopía digestiva alta tomando una biopsia del duodeno para confirmar la celiaquía."
+				/>
+				<figcaption>
+					La biopsia duodenal, tomada durante una endoscopía digestiva alta, confirma el diagnóstico
+					al evaluar el grado de atrofia de las vellosidades (clasificación de Marsh).
+				</figcaption>
+			</figure>
 
 			<div class="gt-box">
 				<h3>La ruta diagnóstica en Guatemala</h3>
@@ -329,6 +358,27 @@ const steps = [
 	}
 	#diagnostico {
 		scroll-margin-top: 90px;
+	}
+	.illus {
+		margin: 2.5rem auto 0;
+		max-width: 760px;
+	}
+	.illus img {
+		display: block;
+		width: 100%;
+		height: auto;
+		border-radius: 16px;
+		box-shadow: var(--box-shadow);
+		background: #fff;
+	}
+	.illus figcaption {
+		margin-top: 0.85rem;
+		text-align: center;
+		font-size: 0.9rem;
+		color: rgb(var(--gray));
+		max-width: 60ch;
+		margin-inline: auto;
+		line-height: 1.5;
 	}
 	.gt-box {
 		margin-top: 2.5rem;

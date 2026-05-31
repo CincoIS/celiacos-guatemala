@@ -9,11 +9,11 @@ Recibir un diagnóstico de enfermedad celíaca puede sentirse abrumador. La buen
 
 ## 1. Respira: no estás solo
 
-Más de 3,200 familias en Guatemala ya han recorrido este camino con nosotros. La celiaquía no es una sentencia, es el inicio de una vida más saludable una vez que identificas la causa de tus malestares.
+Se estima que la celiaquía afecta a cerca del 1 % de la población, y muchas personas en Guatemala ya recorren este camino. No es una sentencia: es el inicio de una vida más saludable una vez que identificas la causa de tus malestares.
 
 ## 2. Aprende a leer etiquetas
 
-El gluten se esconde en el trigo, la cebada y el centeno, pero también en muchos productos procesados. Acostúmbrate a revisar las etiquetas y a buscar el **Sello Sin Gluten** o la leyenda "libre de gluten".
+El gluten se esconde en el trigo, la cebada y el centeno, pero también en muchos productos procesados. Acostúmbrate a revisar la lista de ingredientes y la declaración de alérgenos —que en Centroamérica exige el reglamento RTCA 67.01.07:10— y a buscar la leyenda "libre de gluten" y las advertencias de trazas.
 
 > Ante la duda, no lo consumas. Es preferible preguntar al fabricante que arriesgar una recaída.
 
@@ -25,6 +25,6 @@ El gluten se esconde en el trigo, la cebada y el centeno, pero también en mucho
 
 ## 4. Apóyate en la comunidad
 
-Únete a nuestros grupos de apoyo y a los talleres de cocina. Compartir dudas y recetas con quienes ya viven sin gluten acelera muchísimo la adaptación.
+Buscar a otras personas que ya viven sin gluten —en grupos en línea o en tu entorno cercano— acelera muchísimo la adaptación. Compartir dudas, recetas y hallazgos de productos hace el camino más llevadero.
 
-El primer mes es el más difícil; después, todo se vuelve rutina. Estamos aquí para acompañarte en cada paso.
+El primer mes es el más difícil; después, todo se vuelve rutina.

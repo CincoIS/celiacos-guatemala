@@ -1,0 +1,233 @@
+---
+import Page from '../layouts/Page.astro';
+import Icon from '../components/Icon.astro';
+import { VALUES } from '../consts';
+
+const isNot = [
+	'Una asociación de pacientes registrada (Guatemala aún no tiene una).',
+	'Una clínica ni un servicio de diagnóstico u orientación médica individual.',
+	'Una tienda: no vendemos productos ni representamos marcas.',
+];
+
+const isYes = [
+	'Un recurso de información basada en evidencia, en español y con contexto local.',
+	'Un esfuerzo de incidencia que documenta los vacíos de política pública.',
+	'Un punto de partida para que la comunidad celíaca encuentre fuentes confiables.',
+];
+---
+
+<Page
+	title="Acerca del proyecto — Celiacos Guatemala"
+	description="Celiacos Guatemala es un recurso independiente y sin fines comerciales de información basada en evidencia sobre la enfermedad celíaca, y una iniciativa de incidencia en política pública."
+>
+	<section class="page-hero">
+		<div class="container">
+			<span class="eyebrow">Acerca del proyecto</span>
+			<h1>Por qué existe este proyecto</h1>
+			<p>
+				Cuando buscamos información seria sobre la celiaquía en Guatemala, encontramos un vacío: no
+				hay una asociación nacional de pacientes, ni datos propios, ni una política pública que
+				respalde a la comunidad celíaca. Este sitio intenta empezar a llenar ese vacío con
+				información verificable.
+			</p>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container narrow">
+			<div class="section-head">
+				<span class="eyebrow">Nuestro propósito</span>
+				<h2>Información clara hoy, mejor política pública mañana</h2>
+			</div>
+			<p class="lead">
+				Reunimos y explicamos lo que dice la evidencia médica y la normativa vigente sobre la
+				enfermedad celíaca, adaptado a la realidad guatemalteca. A la vez, documentamos las brechas
+				institucionales —ausencia de asociación, de ley, de etiquetado nacional y de datos— con la
+				meta de que, eventualmente, se traduzcan en mejores decisiones públicas.
+			</p>
+		</div>
+	</section>
+
+	<section class="section section--cream">
+		<div class="container">
+			<div class="section-head">
+				<span class="eyebrow">Cómo trabajamos</span>
+				<h2>Principios del proyecto</h2>
+			</div>
+			<div class="grid grid-4">
+				{
+					VALUES.map((v) => (
+						<div class="card">
+							<span class="card-icon"><Icon name={v.icon} size={26} /></span>
+							<h4>{v.title}</h4>
+							<p>{v.text}</p>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container scope-grid">
+			<div class="scope-card scope-yes">
+				<h3><Icon name="check" size={22} /> Qué es este sitio</h3>
+				<ul>
+					{isYes.map((i) => <li><Icon name="check" size={18} /> {i}</li>)}
+				</ul>
+			</div>
+			<div class="scope-card scope-no">
+				<h3><Icon name="alert" size={22} /> Qué no es</h3>
+				<ul>
+					{isNot.map((i) => <li><Icon name="alert" size={18} /> {i}</li>)}
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--wheat">
+		<div class="container narrow">
+			<div class="section-head">
+				<span class="eyebrow">Metodología</span>
+				<h2>De dónde sale lo que publicamos</h2>
+			</div>
+			<ul class="method-list">
+				<li><Icon name="book" size={18} /> Literatura médica revisada por pares y guías clínicas reconocidas.</li>
+				<li><Icon name="scale" size={18} /> Normativa vigente: reglamentos centroamericanos y marcos legales regionales.</li>
+				<li><Icon name="globe" size={18} /> Fuentes públicas verificables y directorios reconocidos, citados y enlazados.</li>
+			</ul>
+			<p class="disclaimer">
+				<Icon name="alert" size={18} />
+				<span>El contenido tiene fines informativos y no sustituye la consulta con un profesional de salud. Ante cualquier síntoma o decisión sobre pruebas y tratamiento, consulta a tu médico.</span>
+			</p>
+		</div>
+	</section>
+
+	<section class="section join-band">
+		<div class="container">
+			<h2>Todo lo que afirmamos, con su fuente</h2>
+			<p>Revisa la lista de estudios, normas y directorios en los que se basa este sitio.</p>
+			<a href="/referencias" class="btn btn--wheat">Referencias y fuentes</a>
+		</div>
+	</section>
+</Page>
+
+<style>
+	.page-hero {
+		background: rgb(var(--green-light));
+		padding: 3.5rem 0;
+		text-align: center;
+	}
+	.page-hero p {
+		max-width: 64ch;
+		margin: 0.5rem auto 0;
+		font-size: 1.12rem;
+		color: rgb(var(--gray-dark));
+	}
+	.narrow {
+		max-width: 800px;
+	}
+	.narrow .lead {
+		font-size: 1.15rem;
+		color: rgb(var(--gray-dark));
+	}
+	.scope-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1.5rem;
+	}
+	.scope-card {
+		background: #fff;
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: var(--radius);
+		padding: 2rem;
+	}
+	.scope-card h3 {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-size: 1.25rem;
+		margin-bottom: 1rem;
+	}
+	.scope-yes h3 :global(svg) {
+		color: rgb(var(--green));
+	}
+	.scope-no h3 :global(svg) {
+		color: rgb(var(--brand-dark));
+	}
+	.scope-card ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: grid;
+		gap: 0.7rem;
+	}
+	.scope-card li {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.6rem;
+		color: rgb(var(--gray-dark));
+	}
+	.scope-card li :global(svg) {
+		flex-shrink: 0;
+		margin-top: 4px;
+	}
+	.scope-yes li :global(svg) {
+		color: rgb(var(--green));
+	}
+	.scope-no li :global(svg) {
+		color: #b8500e;
+	}
+	.method-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: grid;
+		gap: 0.8rem;
+	}
+	.method-list li {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.6rem;
+		font-weight: 600;
+	}
+	.method-list :global(svg) {
+		color: rgb(var(--green-dark));
+		flex-shrink: 0;
+		margin-top: 4px;
+	}
+	.disclaimer {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.6rem;
+		margin: 1.8rem 0 0;
+		padding: 1.2rem 1.4rem;
+		background: #fff;
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: var(--radius);
+		font-size: 0.95rem;
+		color: rgb(var(--gray-dark));
+	}
+	.disclaimer :global(svg) {
+		color: rgb(var(--brand-dark));
+		flex-shrink: 0;
+		margin-top: 3px;
+	}
+	.join-band {
+		text-align: center;
+		background: linear-gradient(135deg, rgb(var(--ink)), rgb(var(--ink-2)));
+		color: #fff;
+	}
+	.join-band h2 {
+		color: #fff;
+	}
+	.join-band p {
+		color: rgba(255, 255, 255, 0.9);
+		margin-bottom: 1.5rem;
+	}
+	@media (max-width: 760px) {
+		.scope-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

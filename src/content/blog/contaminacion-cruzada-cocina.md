@@ -22,6 +22,6 @@ Incluso una cantidad mínima de gluten —tan pequeña como una miga de pan— p
 
 1. Avisa siempre que eres celíaco, no solo que "no comes gluten".
 2. Pregunta cómo se prepara el platillo, no solo qué lleva.
-3. Prefiere restaurantes con **Sello Sin Gluten**, donde el personal está capacitado.
+3. Prefiere establecimientos **dedicados o 100 % sin gluten**, donde el riesgo de contaminación cruzada es mínimo.
 
 Una cocina organizada y una comunicación clara son tus mejores aliadas para comer sin miedo.

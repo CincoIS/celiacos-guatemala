@@ -1,0 +1,340 @@
+---
+import Page from '../layouts/Page.astro';
+import Icon from '../components/Icon.astro';
+
+const safe = [
+	'Tortilla y productos de maíz (nixtamal)',
+	'Arroz, frijol y papa',
+	'Yuca y otros tubérculos',
+	'Frutas y verduras frescas',
+	'Carnes, pescado y huevo sin empanizar',
+	'Lácteos naturales sin aditivos',
+];
+
+const hidden = [
+	'Pan, pastas, galletas y repostería de trigo',
+	'Empanadas, dobladas y rellenitos con harina',
+	'Cerveza y maltas de cebada',
+	'Aderezos, salsas y sopas instantáneas',
+	'Embutidos y caldos con aglutinantes',
+	'Avena no certificada (riesgo de contaminación)',
+];
+
+const shops = [
+	{
+		title: 'Secciones «sin gluten» en supermercados',
+		items: 'La Torre, Walmart, PriceSmart, Paiz y Despensa Familiar mantienen góndolas o categorías de productos libres de gluten en varias de sus tiendas.',
+	},
+	{
+		title: 'Tiendas y emprendimientos especializados',
+		items: 'NUSS, Panecito, Mother Nature Foods, Alimentos Saludables GT y Enverdece ofrecen panadería, repostería y abarrotes sin gluten, varios con venta en línea.',
+	},
+	{
+		title: 'Marcas importadas frecuentes',
+		items: 'Harina P.A.N. sin gluten, cereales y pastas Orgran, galletas Gullón, harina de almendras y quinoa, disponibles en cadenas mayoristas.',
+	},
+];
+
+const eat = [
+	{ city: 'Ciudad de Guatemala', places: 'Celieti, Wild (Cayalá) y Per Noi Trattoria figuran entre los espacios reportados como dedicados o con amplia oferta sin gluten.' },
+	{ city: 'Quetzaltenango (Xela)', places: 'ElGourmetgf se presenta como restaurante 100 % gluten free; Mandarina ofrece repostería sin gluten.' },
+	{ city: 'Antigua Guatemala', places: 'Varios restaurantes incluyen opciones sin gluten; conviene confirmar protocolos por la afluencia turística.' },
+	{ city: 'Lago de Atitlán', places: 'Hay opciones en Panajachel, San Marcos y San Pedro, pero las reseñas advierten que es la zona más difícil para comer seguro.' },
+];
+---
+
+<Page
+	title="Vivir sin gluten en Guatemala — Celiacos Guatemala"
+	description="Guía práctica para vivir sin gluten en Guatemala: la ventaja de la tortilla de maíz, dónde se esconde el gluten, contaminación cruzada, lectura de etiquetas, compras y comer fuera."
+>
+	<section class="page-hero">
+		<div class="container">
+			<span class="eyebrow">Guía práctica</span>
+			<h1>Vivir sin gluten en Guatemala</h1>
+			<p>
+				La buena noticia: la base de la dieta guatemalteca —la tortilla de maíz— es naturalmente sin
+				gluten. El reto está en la contaminación cruzada, el costo de lo importado y saber leer las
+				etiquetas. Esta guía reúne lo esencial.
+			</p>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container two-col">
+			<div class="food-card food-safe">
+				<span class="card-icon"><Icon name="check" size={26} /></span>
+				<h2>Naturalmente seguro</h2>
+				<p>Alimentos base que, sin contaminación cruzada, son aptos para personas celíacas.</p>
+				<ul>
+					{safe.map((s) => <li><Icon name="check" size={18} /> {s}</li>)}
+				</ul>
+			</div>
+			<div class="food-card food-hidden">
+				<span class="card-icon alt"><Icon name="alert" size={26} /></span>
+				<h2>Dónde se esconde el gluten</h2>
+				<p>Productos que contienen gluten o que suelen llevarlo de forma menos evidente.</p>
+				<ul>
+					{hidden.map((h) => <li><Icon name="alert" size={18} /> {h}</li>)}
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--cream">
+		<div class="container">
+			<div class="callout">
+				<span class="callout-icon"><Icon name="alert" size={28} /></span>
+				<div>
+					<h2>El verdadero riesgo: la contaminación cruzada</h2>
+					<p>
+						Para una persona celíaca, una miga basta para causar daño. El peligro aparece cuando un
+						alimento seguro toca a otro con gluten: el mismo comal o sartén, el aceite donde antes se
+						frió un empanizado, un tostador compartido o —un caso muy guatemalteco— un molino que
+						procesa trigo y maíz. Usa utensilios y superficies separados, y pregunta cómo se prepara
+						cada platillo.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container narrow">
+			<div class="section-head">
+				<span class="eyebrow">Etiquetado</span>
+				<h2>Aprende a leer las etiquetas</h2>
+			</div>
+			<p class="lead">
+				En Centroamérica rige el <strong>RTCA 67.01.07:10</strong>, que obliga a declarar alérgenos
+				—incluido el gluten— y a advertir el riesgo de trazas. Por eso verás frases como «puede
+				contener trazas de…» o «elaborado en equipo que también procesa trigo».
+			</p>
+			<ul class="check-list">
+				<li><Icon name="check" size={18} /> Busca la lista de ingredientes y la declaración de alérgenos.</li>
+				<li><Icon name="check" size={18} /> Desconfía de productos a granel o sin etiqueta clara.</li>
+				<li><Icon name="check" size={18} /> Recuerda que «sin gluten» no es aún una certificación nacional en Guatemala.</li>
+			</ul>
+		</div>
+	</section>
+
+	<section class="section section--wheat">
+		<div class="container">
+			<div class="section-head">
+				<span class="eyebrow">Compras</span>
+				<h2>Dónde abastecerse</h2>
+				<p>Combinar supermercados, emprendimientos locales y marcas importadas suele dar el mejor resultado y precio.</p>
+			</div>
+			<div class="grid grid-3">
+				{
+					shops.map((s) => (
+						<div class="card">
+							<span class="card-icon"><Icon name="store" size={26} /></span>
+							<h3>{s.title}</h3>
+							<p>{s.items}</p>
+						</div>
+					))
+				}
+			</div>
+			<p class="cost-note">
+				<Icon name="alert" size={18} /> Considera un sobrecosto: los productos sin gluten importados
+				suelen costar bastante más que sus equivalentes con gluten.
+			</p>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container">
+			<div class="section-head">
+				<span class="eyebrow">Comer fuera</span>
+				<h2>Restaurantes con opciones sin gluten</h2>
+				<p>La oferta se concentra en la capital, con focos en Antigua, Xela y el Lago de Atitlán.</p>
+			</div>
+			<div class="grid grid-2">
+				{
+					eat.map((e) => (
+						<div class="card eat-card">
+							<h3><Icon name="pin" size={18} /> {e.city}</h3>
+							<p>{e.places}</p>
+						</div>
+					))
+				}
+			</div>
+			<p class="src-note">
+				Estos nombres se citan como referencia, no como recomendación ni certificación. Confirma
+				siempre los protocolos de contaminación cruzada directamente con el establecimiento.
+				Directorios como <a href="https://www.findmeglutenfree.com/gt" target="_blank" rel="noopener">Find Me Gluten Free</a>
+				recopilan reseñas actualizadas.
+			</p>
+		</div>
+	</section>
+
+	<section class="section join-band">
+		<div class="container">
+			<h2>Información que también necesita respaldo público</h2>
+			<p>Vivir sin gluten en Guatemala depende hoy del esfuerzo individual. Conoce por qué hace falta una política pública.</p>
+			<div class="cta-row">
+				<a href="/incidencia" class="btn btn--wheat">La agenda de incidencia</a>
+				<a href="/referencias" class="btn btn--light">Referencias y fuentes</a>
+			</div>
+		</div>
+	</section>
+</Page>
+
+<style>
+	.page-hero {
+		background: rgb(var(--green-light));
+		padding: 3.5rem 0;
+		text-align: center;
+	}
+	.page-hero p {
+		max-width: 62ch;
+		margin: 0.5rem auto 0;
+		font-size: 1.12rem;
+		color: rgb(var(--gray-dark));
+	}
+	.two-col {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1.5rem;
+	}
+	.food-card {
+		border-radius: var(--radius);
+		padding: 2rem;
+		border: 1px solid rgb(var(--gray-light));
+		background: #fff;
+	}
+	.food-card h2 {
+		font-size: 1.4rem;
+	}
+	.food-card > p {
+		color: rgb(var(--gray-dark));
+	}
+	.food-card ul {
+		list-style: none;
+		margin: 1rem 0 0;
+		padding: 0;
+		display: grid;
+		gap: 0.6rem;
+	}
+	.food-card li {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.6rem;
+	}
+	.food-card li :global(svg) {
+		flex-shrink: 0;
+		margin-top: 4px;
+	}
+	.food-safe li :global(svg) {
+		color: rgb(var(--green));
+	}
+	.food-hidden li :global(svg) {
+		color: #b8500e;
+	}
+	.card-icon.alt {
+		background: rgb(var(--brand-tint));
+		color: #b8500e;
+	}
+	.callout {
+		display: flex;
+		gap: 1.2rem;
+		align-items: flex-start;
+		background: #fff;
+		border: 1px solid rgb(var(--gray-light));
+		border-left: 4px solid rgb(var(--brand));
+		border-radius: var(--radius);
+		padding: 2rem;
+	}
+	.callout-icon {
+		color: rgb(var(--brand-dark));
+		flex-shrink: 0;
+	}
+	.callout h2 {
+		font-size: 1.4rem;
+		margin-bottom: 0.5rem;
+	}
+	.callout p {
+		color: rgb(var(--gray-dark));
+		margin: 0;
+	}
+	.narrow {
+		max-width: 760px;
+	}
+	.narrow .lead {
+		font-size: 1.1rem;
+		color: rgb(var(--gray-dark));
+	}
+	.check-list {
+		list-style: none;
+		margin: 1.2rem 0 0;
+		padding: 0;
+		display: grid;
+		gap: 0.7rem;
+	}
+	.check-list li {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.6rem;
+	}
+	.check-list :global(svg) {
+		color: rgb(var(--green));
+		flex-shrink: 0;
+		margin-top: 4px;
+	}
+	.cost-note {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		justify-content: center;
+		margin-top: 2rem;
+		font-weight: 600;
+		color: rgb(var(--ink));
+	}
+	.cost-note :global(svg) {
+		color: rgb(var(--brand-dark));
+		flex-shrink: 0;
+	}
+	.eat-card h3 {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+	.eat-card h3 :global(svg) {
+		color: rgb(var(--green));
+	}
+	.src-note {
+		margin-top: 1.5rem;
+		font-size: 0.92rem;
+		color: rgb(var(--gray));
+		max-width: 70ch;
+	}
+	.join-band {
+		text-align: center;
+		background: linear-gradient(135deg, rgb(var(--ink)), rgb(var(--ink-2)));
+		color: #fff;
+	}
+	.join-band h2 {
+		color: #fff;
+	}
+	.join-band p {
+		color: rgba(255, 255, 255, 0.9);
+		margin-bottom: 1.5rem;
+		max-width: 56ch;
+		margin-inline: auto;
+	}
+	.cta-row {
+		display: flex;
+		gap: 0.8rem;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+	@media (max-width: 760px) {
+		.two-col {
+			grid-template-columns: 1fr;
+		}
+		.callout {
+			flex-direction: column;
+			gap: 0.8rem;
+		}
+	}
+</style>

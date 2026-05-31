@@ -5,23 +5,30 @@
  */
 
 :root {
-	/* Brand palette: trustworthy green + warm wheat accent */
-	--green: 31, 122, 79; /* #1f7a4f */
-	--green-dark: 19, 84, 53; /* #135435 */
-	--green-light: 232, 245, 238;
-	--wheat: 214, 158, 46; /* #d69e2e */
-	--wheat-light: 252, 244, 224;
-	--cream: 250, 247, 240;
+	/* CINCOIS brand palette: Tangelo orange + Black Beauty */
+	--brand: 255, 128, 41; /* PANTONE 15-1335 Tangelo #FF8029 */
+	--brand-dark: 224, 96, 18; /* darker tangelo for hover/links #E06012 */
+	--brand-tint: 255, 238, 224; /* pale orange wash for soft bands */
+	--ink: 38, 37, 41; /* PANTONE 19-3911 Black Beauty #262529 */
+	--ink-2: 58, 56, 63; /* lifted black for gradients */
+	--surface: 250, 249, 247; /* warm off-white */
 
-	--accent: rgb(var(--green));
-	--accent-dark: rgb(var(--green-dark));
+	/* Semantic aliases consumed across components */
+	--green: var(--brand); /* primary fills, icons, logo */
+	--green-dark: var(--ink); /* dark text + dark surfaces */
+	--green-light: var(--brand-tint); /* soft orange bands */
+	--wheat: var(--brand); /* energetic accent / CTA */
+	--wheat-light: var(--brand-tint);
+	--cream: var(--surface);
 
-	--ink: 26, 32, 28; /* near-black with a hint of green */
-	--black: 26, 32, 28;
-	--gray: 99, 110, 104;
-	--gray-light: 230, 233, 230;
-	--gray-dark: 52, 60, 55;
-	--gray-gradient: rgba(var(--green-light), 60%), rgb(var(--cream));
+	--accent: rgb(var(--brand));
+	--accent-dark: rgb(var(--brand-dark));
+
+	--black: var(--ink);
+	--gray: 110, 108, 114;
+	--gray-light: 232, 230, 235;
+	--gray-dark: 60, 58, 64;
+	--gray-gradient: rgba(var(--brand-tint), 60%), rgb(var(--surface));
 	--box-shadow:
 		0 2px 6px rgba(var(--ink), 8%), 0 8px 24px rgba(var(--ink), 8%),
 		0 16px 32px rgba(var(--ink), 6%);
@@ -204,22 +211,22 @@ hr {
 	transform: translateY(-2px);
 }
 .btn--primary {
-	background: rgb(var(--green));
+	background: rgb(var(--ink));
 	color: #fff;
-	box-shadow: 0 6px 16px rgba(var(--green), 35%);
+	box-shadow: 0 6px 16px rgba(var(--ink), 25%);
 }
 .btn--primary:hover {
-	background: rgb(var(--green-dark));
+	background: rgb(var(--ink-2));
 	color: #fff;
 }
 .btn--wheat {
-	background: rgb(var(--wheat));
-	color: #3a2c06;
-	box-shadow: 0 6px 16px rgba(var(--wheat), 40%);
+	background: rgb(var(--brand));
+	color: rgb(var(--ink));
+	box-shadow: 0 6px 16px rgba(var(--brand), 40%);
 }
 .btn--wheat:hover {
-	background: #c08a1f;
-	color: #3a2c06;
+	background: rgb(var(--brand-dark));
+	color: #fff;
 }
 .btn--ghost {
 	background: transparent;
@@ -227,16 +234,16 @@ hr {
 	border-color: rgba(var(--ink), 18%);
 }
 .btn--ghost:hover {
-	border-color: rgb(var(--green));
-	color: rgb(var(--green-dark));
+	border-color: rgb(var(--brand));
+	color: rgb(var(--brand-dark));
 }
 .btn--light {
 	background: #fff;
-	color: rgb(var(--green-dark));
+	color: rgb(var(--ink));
 }
 .btn--light:hover {
-	background: rgb(var(--cream));
-	color: rgb(var(--green-dark));
+	background: rgb(var(--surface));
+	color: rgb(var(--brand-dark));
 }
 
 /* ---------- Cards ---------- */
@@ -298,8 +305,8 @@ hr {
 	gap: 0.4rem;
 	padding: 0.3rem 0.8rem;
 	border-radius: 999px;
-	background: rgb(var(--wheat-light));
-	color: #7a5a05;
+	background: rgb(var(--brand-tint));
+	color: rgb(var(--brand-dark));
 	font-size: 0.85rem;
 	font-weight: 700;
 }

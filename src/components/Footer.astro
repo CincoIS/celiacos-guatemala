@@ -1,5 +1,4 @@
 ---
-import Icon from './Icon.astro';
 import { SITE_TITLE, ORG, NAV_LINKS, FOOT_LINKS } from '../consts';
 const year = new Date().getFullYear();
 ---
@@ -7,9 +6,8 @@ const year = new Date().getFullYear();
 <footer>
 	<div class="container foot-grid">
 		<div class="foot-about">
-			<a href="/" class="brand">
-				<span class="brand-mark"><Icon name="wheat" size={24} /></span>
-				<span>{SITE_TITLE}</span>
+			<a href="/" class="brand" aria-label={SITE_TITLE}>
+				<img src="/celiacos_guatemala_logo.svg" alt={SITE_TITLE} class="brand-logo" width="158" height="50" />
 			</a>
 			<p>
 				Recurso independiente de información basada en evidencia sobre la enfermedad celíaca en
@@ -58,24 +56,17 @@ const year = new Date().getFullYear();
 		padding-bottom: 2.5rem;
 	}
 	.brand {
-		display: flex;
+		display: inline-flex;
 		align-items: center;
-		gap: 0.6rem;
-		font-weight: 700;
-		font-size: 1.1rem;
-		color: #fff;
 		text-decoration: none;
 		margin-bottom: 0.8rem;
 	}
-	.brand-mark {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		width: 38px;
-		height: 38px;
-		border-radius: 11px;
-		background: rgba(255, 255, 255, 0.14);
-		color: #fff;
+	.brand-logo {
+		display: block;
+		height: 50px;
+		width: auto;
+		/* render the charcoal/orange logo as white on the dark footer */
+		filter: brightness(0) invert(1);
 	}
 	.foot-about p {
 		font-size: 0.95rem;

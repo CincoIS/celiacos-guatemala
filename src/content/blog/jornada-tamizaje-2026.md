@@ -2,7 +2,7 @@
 title: "Tamizaje y diagnóstico: cómo y cuándo hacerse la prueba"
 description: "Qué es el tamizaje serológico de la celiaquía, qué mide, por qué no debes dejar de comer gluten antes del examen y cómo es la ruta diagnóstica en Guatemala."
 pubDate: "Mar 05 2026"
-heroImage: "/blog-placeholder-3.jpg"
+heroImage: "/dx-serologia.webp"
 ---
 
 En Guatemala, una persona puede tardar **años** en recibir un diagnóstico de celiaquía. Durante ese tiempo, los síntomas se confunden con otras condiciones y la salud se deteriora. Entender el tamizaje ayuda a acortar ese camino.

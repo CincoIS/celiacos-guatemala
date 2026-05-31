@@ -2,7 +2,7 @@
 title: "Acabo de recibir el diagnóstico: ¿y ahora qué?"
 description: "Una guía práctica y tranquilizadora para los primeros días después de un diagnóstico de celiaquía, paso a paso."
 pubDate: "May 12 2026"
-heroImage: "/blog-placeholder-1.jpg"
+heroImage: "/dx-tratamiento.webp"
 ---
 
 Recibir un diagnóstico de enfermedad celíaca puede sentirse abrumador. La buena noticia es que, a diferencia de muchas condiciones crónicas, la celiaquía tiene un tratamiento claro y eficaz: una dieta sin gluten. Aquí te acompañamos en los primeros pasos.

@@ -2,7 +2,7 @@
 title: "Mi hijo es celíaco y va a la escuela: guía para padres"
 description: "Cómo coordinar con maestros, refacciones y cumpleaños para que tu hijo celíaco esté seguro e incluido en la escuela."
 pubDate: "Mar 22 2026"
-heroImage: "/blog-placeholder-5.jpg"
+heroImage: "/etiqueta-trazas.webp"
 ---
 
 La escuela es uno de los grandes retos para las familias con niñas y niños celíacos. Entre refacciones compartidas, cumpleaños y actividades, el riesgo de contaminación y de exclusión es real. Con buena comunicación, todo se puede manejar.

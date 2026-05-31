@@ -2,7 +2,7 @@
 title: "Comer sin gluten en Guatemala: alimentos que ya son seguros"
 description: "La cocina guatemalteca tiene muchísimas opciones naturalmente sin gluten. Te contamos cuáles aprovechar y a qué poner atención."
 pubDate: "Apr 10 2026"
-heroImage: "/blog-placeholder-4.jpg"
+heroImage: "/entorno-seguro.webp"
 ---
 
 Una de las primeras preocupaciones tras el diagnóstico es: "¿y ahora qué voy a comer?". La buena noticia es que la cocina guatemalteca está llena de ingredientes **naturalmente sin gluten**.

@@ -40,7 +40,7 @@ const year = new Date().getFullYear();
 		</div>
 	</div>
 	<div class="foot-bottom container">
-		<span>&copy; {year} {ORG.name}. Información de uso libre con atribución.</span>
+		<span>&copy; {year} {ORG.name}. Un producto de <a href="https://cincois.com" target="_blank" rel="noopener noreferrer"><strong>Cinco Innovative Solutions LLC</strong></a></span>
 		<span>Hecho en Guatemala.</span>
 	</div>
 </footer>
@@ -117,6 +117,14 @@ const year = new Date().getFullYear();
 		border-top: 1px solid rgba(255, 255, 255, 0.12);
 		font-size: 0.85rem;
 		color: rgba(255, 255, 255, 0.6);
+	}
+	.foot-bottom a {
+		color: rgba(255, 255, 255, 0.85);
+		text-decoration: none;
+	}
+	.foot-bottom a:hover {
+		color: #fff;
+		text-decoration: underline;
 	}
 	@media (max-width: 860px) {
 		.foot-grid {

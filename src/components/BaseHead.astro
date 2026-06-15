@@ -12,13 +12,56 @@ interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description, image = '/og-image.jpg' } = Astro.props;
+
+const siteOrigin = Astro.site?.origin ?? 'https://celiacosguatemala.org';
+
+// Organization + WebSite structured data. alternateName ties the entity to
+// "Sin Gluten Guatemala" so the site is associated with that name/query.
+const structuredData = {
+	'@context': 'https://schema.org',
+	'@graph': [
+		{
+			'@type': 'Organization',
+			'@id': `${siteOrigin}/#org`,
+			name: 'Celiacos Guatemala',
+			alternateName: ['Sin Gluten Guatemala', 'Celíacos Guatemala'],
+			url: `${siteOrigin}/`,
+			logo: `${siteOrigin}/celiacos_guatemala_logo.svg`,
+			image: `${siteOrigin}/og-image.jpg`,
+			description:
+				'Recurso independiente sobre la enfermedad celíaca y la vida sin gluten en Guatemala: información basada en evidencia e incidencia por la política pública.',
+			areaServed: { '@type': 'Country', name: 'Guatemala' },
+			knowsAbout: [
+				'Enfermedad celíaca',
+				'Dieta sin gluten',
+				'Sin gluten en Guatemala',
+				'Contaminación cruzada',
+				'Etiquetado de alimentos sin gluten',
+			],
+		},
+		{
+			'@type': 'WebSite',
+			'@id': `${siteOrigin}/#website`,
+			url: `${siteOrigin}/`,
+			name: 'Celiacos Guatemala',
+			alternateName: 'Sin Gluten Guatemala',
+			inLanguage: 'es',
+			publisher: { '@id': `${siteOrigin}/#org` },
+		},
+	],
+};
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <meta name="generator" content={Astro.generator} />
+
+<!-- Favicons (wheat-spike mark from the logo) -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<meta name="theme-color" content="#FF8029" />
 
 <!-- Font preloads -->
 <link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin />
@@ -31,13 +74,17 @@ const { title, description, image = '/og-image.jpg' } = Astro.props;
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
+<meta name="author" content="Celiacos Guatemala" />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content={Astro.url} />
+<meta property="og:site_name" content="Celiacos Guatemala" />
+<meta property="og:locale" content="es_GT" />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:image:alt" content="Celiacos Guatemala — Sin Gluten Guatemala" />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
@@ -45,3 +92,7 @@ const { title, description, image = '/og-image.jpg' } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+<meta property="twitter:image:alt" content="Celiacos Guatemala — Sin Gluten Guatemala" />
+
+<!-- Structured data: Organization + WebSite -->
+<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />

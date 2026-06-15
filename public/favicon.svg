@@ -1,12 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-	<rect width="32" height="32" rx="8" fill="#FF8029"/>
-	<g fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(4 4)">
-		<path d="M2 22 16 8"/>
-		<path d="M3.5 8.5 6 11l2.5-2.5L6 6z"/>
-		<path d="M7 5 9.5 7.5 12 5 9.5 2.5z"/>
-		<path d="M7 12l2.5 2.5L12 12 9.5 9.5z"/>
-		<path d="M10.5 8.5 13 11l2.5-2.5L13 6z"/>
-		<path d="M14 5l2.5 2.5L19 5l-2.5-2.5z"/>
-		<path d="M14 12l2.5 2.5L19 12l-2.5-2.5z"/>
-	</g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Celiacos Guatemala">
+  <rect width="64" height="64" rx="13" fill="#faf9f7"/>
+  <g transform="translate(21.2 8) scale(0.6) translate(-14 -20)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M30 96 C30 70 30 48 30 30" stroke="#262529" stroke-width="5" fill="none"/>
+    <path d="M30 38 C22 33 18 27 18 20 C26 22 30 28 30 36 Z" fill="#262529"/>
+    <path d="M30 38 C38 33 42 27 42 20 C34 22 30 28 30 36 Z" fill="#FF8029"/>
+    <path d="M30 52 C21 47 16 41 16 33 C25 35 30 41 30 50 Z" fill="#262529"/>
+    <path d="M30 52 C39 47 44 41 44 33 C35 35 30 41 30 50 Z" fill="#262529"/>
+    <path d="M30 66 C20 61 14 55 14 46 C24 48 30 54 30 64 Z" fill="#262529"/>
+    <path d="M30 66 C40 61 46 55 46 46 C36 48 30 54 30 64 Z" fill="#262529"/>
+    <path d="M14 100 H50 C50 92 43 86 35 86 H14 Z" fill="#FF8029"/>
+  </g>
 </svg>

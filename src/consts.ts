@@ -5,7 +5,7 @@
 
 export const SITE_TITLE = "Celiacos Guatemala";
 export const SITE_DESCRIPTION =
-	"Recurso independiente de información basada en evidencia sobre la enfermedad celíaca en Guatemala, e iniciativa de incidencia por la política pública que el país aún no tiene.";
+	"Recurso independiente sobre la enfermedad celíaca y la vida sin gluten en Guatemala: información basada en evidencia e incidencia por la política pública que el país aún no tiene.";
 
 export const ORG = {
 	name: "Celiacos Guatemala",

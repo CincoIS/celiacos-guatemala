@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://celiacosguatemala.org/sitemap-index.xml
+Sitemap: https://celiacos.com.gt/sitemap-index.xml
